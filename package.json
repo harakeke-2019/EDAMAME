@@ -1,0 +1,11 @@
+{
+  "name": "EDAMAME",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "repository": "https://github.com/harakeke-2019/EDAMAME.git",
+  "author": "EDA",
+  "license": "ISC",
+  "scripts": {
+    "start": "node server"
+  }
+}
