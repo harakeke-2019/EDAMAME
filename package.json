@@ -6,6 +6,14 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
