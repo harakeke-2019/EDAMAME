@@ -7,9 +7,13 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server",
-    "updateDb": "rm dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run"
+    "start": "webpack && node server",
+    "dev": "node server & webpack --watch",
+    "client": "webpack-dev-server --hot --inline",
+    "server": "node server",
+    "knex": "knex --knexfile ./server/db/knexfile.js",
+    "updateDb": "rm dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
+    "test": "jest --watchAll"
   },
   "babel": {
     "presets": [
@@ -40,14 +44,14 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.7.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14",
-    "enzyme": "^3.9.0",
-    "jest": "^24.1.0",
-    "nodemon": "^1.18.10"
+    "webpack-dev-server": "^3.1.14"
   }
 }
