@@ -11,6 +11,21 @@
     "dev": "nodemon server",
     "updateDb": "rm dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
+  },
+  "jest": {
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
+  },
   "dependencies": {
     "express": "^4.16.4",
     "knex": "^0.16.3",
@@ -19,6 +34,18 @@
     "superagent": "^4.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
     "enzyme": "^3.9.0",
     "jest": "^24.1.0",
     "nodemon": "^1.18.10"
