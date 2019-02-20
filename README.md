@@ -5,7 +5,7 @@ A platform in which students and facilitators can easily keep track of assessmen
 
 For more info see the [wiki](https://github.com/harakeke-2019/EDAMAME/wiki).
 
-Have fun everyone!
+Have fun developers!
 
 Built by:  
 Harakeke 2019 
