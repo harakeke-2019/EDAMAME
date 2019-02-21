@@ -5,11 +5,11 @@ export default function Login() {
     <div>
       <h1 className="login">Login</h1>
       <form className="form" action="#">
-        Username
+        <span>Username </span>
         <input type="text" name="username" />
         <br />
         <br />
-        Password
+        <span>Password </span>
         <input type="text" name="password" />
         <br />
         <br />
