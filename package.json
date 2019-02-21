@@ -7,7 +7,7 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "node server && webpack --watch",
+    "start": "webpack && node server",
     "dev": "node server & webpack --watch",
     "client": "webpack-dev-server --hot --inline",
     "server": "node server",
