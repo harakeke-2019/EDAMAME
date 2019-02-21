@@ -3,11 +3,18 @@ const config = require('../knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-    getAllCohorts
+  getAllCohorts,
+  getCohort
 }
 
-function getAllCohorts () {
-    return db('cohorts')
+function getAllCohorts (db = connection) {
+  return db('cohorts')
     .select('name', 'year')
 }
 
+function getCohort (id, db = connection) {
+  return db('cohorts')
+    .where('id', id)
+    .select()
+    .first()
+}
