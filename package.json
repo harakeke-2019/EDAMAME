@@ -11,7 +11,7 @@
     "dev": "node server & webpack --watch",
     "client": "webpack-dev-server --hot --inline",
     "server": "node server",
-    "knex": "knex --knexfile ./server/db/knexfile.js",
+    "knex": "knex --knexfile ./knexfile.js",
     "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
     "test": "jest --watchAll"
   },
