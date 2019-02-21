@@ -6,6 +6,9 @@ module.exports = router
 
 router.get('/', (req, res) => {
   db.getAllCohorts()
+    .then(cohorts => {
+      res.json(cohorts)
+    })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
