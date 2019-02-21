@@ -1,26 +1,20 @@
-const server = require('../server/routes')
+const server = require('../server/server')
 const request = require('supertest')
-const cheerio = require('cheerio')
 
 test('All systems are go', () => {
   expect(true).toBeTruthy()
 })
 
+test('First title comes back', (done) => {
+  const expected = '1. Use Git and terminal commands to manage a code base'
 
-test('/assessments route works', (done) => {
   request(server)
-    .get('/assessments/1')
+    .get('/api/v1/assessments/1')
+    .expect('Content-Type', /json/)
     .expect(200)
-    .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       expect(err).toBeNull()
-
-      const $ = cheerio.load(res.text)
-      const actual = $('h1').text()
-
-      console.log(actual)
-
-      expect(actual).toMatch('Turing')
+      expect(res.body.title).toBe(expected)
       done()
     })
 })

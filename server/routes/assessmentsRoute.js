@@ -5,8 +5,7 @@ const db = require('../db/assessmentsDb')
 router.get('/', (req, res)=>{
     db.getAssessments()
         .then(assessments=>{
-            console.log(assessments)
-            res.json(assessments)
+            res.status(202).json(assessments)
         })
         .catch(err=>{
             res.status(500).send(err.message)
@@ -16,7 +15,10 @@ router.get('/', (req, res)=>{
 router.get('/:id', (req, res) => {
   const id = req.params.id
     db.getAssessmentsById(id)
-    .then(assessment=>res.json(assessment))
+    .then(assessment=>{
+        console.log(assessment)
+        res.json(assessment)
+    })
     .catch(err => {
         res.status(500).send(err.message)
       })
