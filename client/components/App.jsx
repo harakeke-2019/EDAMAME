@@ -1,8 +1,13 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
+
+import Login from './Login'
 
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <React.Fragment>
+      <Route Login path="/" component={Login} />
+    </React.Fragment>
   )
 }
 
