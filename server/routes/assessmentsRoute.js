@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const assessmentsDb = require('./assessmentsDb')
+const assessmentsDb = require('../db/assessmentsDb')
 
 router.get('/', (req, res)=>{
     router.getAssessments()
@@ -8,7 +8,7 @@ router.get('/', (req, res)=>{
             res.json(assessments)
         })
         .catch(err=>{
-            res.status(500).send.(err.message)
+            res.status(500).send(err.message)
         })
 })
 
