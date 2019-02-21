@@ -1,6 +1,6 @@
-const express = require('express')
-const db = require('../db')
-const router = express.Router()
+const environment = process.env.NODE_ENV || 'development'
+const config = require('../knexfile')[environment]
+const connection = require('knex')(config)
 
 module.exports = {
     getAllCohorts
