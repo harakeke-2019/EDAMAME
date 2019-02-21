@@ -22,7 +22,7 @@ exports.seed = function (knex, Promise) {
           status_id: 2,
           evidence: 'evidence',
           date_modified: 'date'},
-        {id: 3,
+        {id: 4,
           student_id: 1,
           assessment_id: 4,
           status_id: 1,
