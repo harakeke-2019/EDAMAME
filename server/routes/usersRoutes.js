@@ -9,11 +9,12 @@ const router = express.Router()
 router.post('/register', (req, res) => {
   const name = req.body.name
   const role = req.body.role
+  const cohort = req.body.cohort
   // const lastname = req.body.surname
   // const email = req.body.email
   const password = req.body.hash // Do we need an extra param for password confirmation? Also what encryption stuff do we need here?
 
-  db.newUser(name, role, password)
+  db.newUser(name, role, cohort, password)
     .then(res.redirect('/')) // redirect to relevant path for a registered user.
 
     .catch(displayErr)
@@ -22,6 +23,8 @@ router.post('/register', (req, res) => {
     res.status(500).send(err.message)
   }
 })
+
+module.exports = router
 
 // router.post('/register', (req, res) => {
 //   const newUser = {name: req.body.name, password: req.body.password}
