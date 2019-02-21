@@ -7,7 +7,7 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "webpack && node server",
+    "start": "concurrently \"node server\" \"webpack --watch\"",
     "dev": "node server & webpack --watch",
     "client": "webpack-dev-server --hot --inline",
     "server": "node server",
@@ -31,6 +31,7 @@
     ]
   },
   "dependencies": {
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "knex": "^0.16.3",
     "path": "^0.12.7",
