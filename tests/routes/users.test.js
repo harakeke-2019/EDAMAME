@@ -4,7 +4,7 @@ const seedData = [
   {id: 1, name: 'Jane', surname: 'Doe', hash: '', role: 'facilitator'}, {id: 2, name: 'John', surname: 'Doe', hash: '', role: 'student'}
 ]
 
-jest.mock('../../server/db/db.js', () => ({
+jest.mock('../../server/db/users.js', () => ({
   getUsers: () => Promise.resolve([{id: 1, name: 'Jane', surname: 'Doe', hash: '', role: 'facilitator'}, {id: 2, name: 'John', surname: 'Doe', hash: '', role: 'student'}
   ])
 }))

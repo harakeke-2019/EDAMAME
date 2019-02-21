@@ -1,6 +1,4 @@
-const environment = 'development'
-const config = require('../../knexfile')[environment]
-const connection = require('knex')(config)
+const connection = require('./')
 
 module.exports = {
   getAllCohorts,
