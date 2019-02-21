@@ -7,12 +7,13 @@ const router = express.Router()
 // route to register new user (auth routes prefixed with /api/v1/auth)
 
 router.post('/register', (req, res) => {
-  const firstname = req.body.first
-  const lastname = req.body.surname
-  const email = req.body.email
-  const password = req.body.password // Do we need an extra param for password confirmation? Also what encryption stuff do we need here?
+  const name = req.body.name
+  const role = req.body.role
+  // const lastname = req.body.surname
+  // const email = req.body.email
+  const password = req.body.hash // Do we need an extra param for password confirmation? Also what encryption stuff do we need here?
 
-  db.newUser(firstname, lastname, email, password)
+  db.newUser(name, role, password)
     .then(res.redirect('/')) // redirect to relevant path for a registered user.
 
     .catch(displayErr)
