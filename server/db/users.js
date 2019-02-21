@@ -14,7 +14,7 @@ function newUser (name, surname, role, password, db = connection) {
     .insert({name, surname, role, hash: password})
 }
 
-// newUserCohort db function
+// addCohort db function
 
 function addCohort (cohort, db = connection) {
   return db('students')
