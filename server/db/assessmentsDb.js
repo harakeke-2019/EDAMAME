@@ -5,7 +5,7 @@ const connection = require('knex')(config)
 function getAssessments( db=connection){
     return db('modules')
     .join('assessments', 'modules.id', 'module_id' )
-    .select()
+    .select('modules.id as ModuleId', 'modules.title as moduleTitle', 'assessments.id as assessmentsId', 'assessments.title as assessmentsTitle', 'assessments.description', 'assessments.link', 'assessments.week_day')
 }
 
 function getAssessmentsById(id, db=connection){
