@@ -13,7 +13,8 @@
     "server": "node server",
     "knex": "knex --knexfile ./knexfile.js",
     "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "e2e": "nodemon server --ignore server/public & webpack --watch & cypress open"
   },
   "babel": {
     "presets": [
@@ -47,6 +48,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "cypress": "^3.1.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "jest": "^24.1.0",
