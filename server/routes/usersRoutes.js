@@ -1,9 +1,8 @@
 const express = require('express')
 const router = express()
-const request = require('superagent')
 const db = require('../DB/db')
 
-router.get('/users', (req, res) => {
+router.get('/', (req, res) => {
   db.getUsers()
     .then(users => {
       res.json(users)
