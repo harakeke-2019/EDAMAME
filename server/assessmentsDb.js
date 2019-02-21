@@ -1,11 +1,11 @@
 const environment = process.env.NODE_ENV || 'development'
-const config = require('./knexfile')[environment]
+const config = require('../knexfile')[environment]
 const connection = require('knex')(config)
 
 function getAssessments(id, db = connection) {}
 
 function updateEvidence(id, evidence, db = connection) {
-  return db('Students_Assessments')
+  return db('student_assessments')
     .where('assessment_id', id)
     .update({
       evidence: evidence.evidence,
