@@ -8,6 +8,6 @@ module.exports = {
 
 function getAllCohorts () {
     return db('cohorts')
-    .select('name', 'year', 'campus')
+    .select('name', 'year')
 }
 
