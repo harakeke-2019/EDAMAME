@@ -1,8 +1,8 @@
 import request from 'superagent'
 
-const userUrl 'http://localhost:3000/api/v1'
+const userUrl = 'http://localhost:3000/api/v1'
 
-export function getUsers (callback) {
+export function getUsers () {
   request
     .get(`${userUrl}/users`)
     .then(res => res.body)
