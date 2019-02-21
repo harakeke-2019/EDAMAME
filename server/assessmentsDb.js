@@ -6,11 +6,13 @@ function getAssessments(id, db=connection){
     
 }
 
-function updateEvidence(id, evidence, db){
+function updateEvidence(assId, evidenceInfo, db){
   return db('Students_Assessments')
-        .where('assessment_id',id)
-        .update('evidence', evidence)
+        .where('assessment_id',assId)
+        .update({evidence: evidenceInfo.evidence,
+                 date_modified: evidenceInfo.date })
 }
+
 
 
 module.exports ={
