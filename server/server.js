@@ -4,7 +4,7 @@ const express = require('express')
 const server = express()
 
 const starterRoute = require('./routes/starter')
-const assessmentsRoute = require('./routes/assessmentsRoute')
+const assessmentsRoute = require('./routes/assessmentsRoutes')
 const cohortRoutes = require('./routes/cohortRoutes')
 
 server.use(express.json())
