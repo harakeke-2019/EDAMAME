@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const assessmentsDb = require('../db/assessmentsDb')
+const db = require('../db/assessmentsDb')
 
 router.get('/', (req, res)=>{
-    router.getAssessments()
-        .then (assessments=>{
+    db.getAssessments()
+        .then(assessments=>{
+            console.log(assessments)
             res.json(assessments)
         })
         .catch(err=>{
@@ -14,7 +15,7 @@ router.get('/', (req, res)=>{
 
 router.get('/:id', (req, res) => {
   const id = req.params.id
-  assessmentsDb.getAssessmentsById(id)
+    db.getAssessmentsById(id)
     .then(assessment=>res.json(assessment))
     .catch(err => {
         res.status(500).send(err.message)
