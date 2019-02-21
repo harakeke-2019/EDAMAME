@@ -2,15 +2,15 @@ const express = require('express')
 
 const assessmentsRouter = express.Router()
 
-router.get('/assessments/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const id = req.params.id
 })
 
-router.put('/assessments/:id', (req, res) => {
-  const assID = req.params.id
-  const evidenceInfo = req.body
-  db.updateEvidence(assID, evidenceInfo).catch(err =>
-    res.status(500).json({ error: 'Fail to add evidence to assesment!' })
+router.put('/:id', (req, res) => {
+  const id = req.params.id
+  const evidence = req.body
+  db.updateEvidence(id, evidence).catch(err =>
+    res.status(500).json({ error: 'Fail to add evidence to assessment!' })
   )
 })
 

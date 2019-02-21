@@ -4,12 +4,12 @@ const connection = require('knex')(config)
 
 function getAssessments(id, db = connection) {}
 
-function updateEvidence(assId, evidenceInfo, db) {
+function updateEvidence(id, evidence, db = connection) {
   return db('Students_Assessments')
-    .where('assessment_id', assId)
+    .where('assessment_id', id)
     .update({
-      evidence: evidenceInfo.evidence,
-      date_modified: evidenceInfo.date
+      evidence: evidence.evidence,
+      date_modified: evidence.date
     })
 }
 
