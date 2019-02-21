@@ -3,7 +3,7 @@ const router = express.Router()
 
 const db = require('../db/cohorts')
 
-router.get('/cohorts/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   db.getCohort(req.params.id)
     .then(cohort => {
       res.json(cohort)
