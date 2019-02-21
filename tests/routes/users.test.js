@@ -1,20 +1,12 @@
 const request = require('supertest')
 
 const seedData = [
-  {id: 1,
-    name: 'Jane',
-    surname: 'Doe',
-    hash: '',
-    role: 'facilitator'},
-  {id: 2,
-    name: 'John',
-    surname: 'Doe',
-    hash: '',
-    role: 'student'}
+  {id: 1, name: 'Jane', surname: 'Doe', hash: '', role: 'facilitator'}, {id: 2, name: 'John', surname: 'Doe', hash: '', role: 'student'}
 ]
 
 jest.mock('../../server/db/db.js', () => ({
-  getUsers: () => Promise.resolve({id: 1, name: 'Jane', surname: 'Doe', hash: '', role: 'facilitator'})
+  getUsers: () => Promise.resolve([{id: 1, name: 'Jane', surname: 'Doe', hash: '', role: 'facilitator'}, {id: 2, name: 'John', surname: 'Doe', hash: '', role: 'student'}
+  ])
 }))
 
 const server = require('../../server/server')
@@ -24,9 +16,9 @@ test('GET users', () => {
     .get('/api/v1/users')
     .expect(200)
     .then((res) => {
-      const expected = seedData[1].name
-      const actual = res.body.name
-      expect(expected).toBe(actual)
+      const expected = seedData
+      const actual = res.body
+      expect(expected).toEqual(actual)
     })
     .catch(err => expect(err).toBeNull())
 })
