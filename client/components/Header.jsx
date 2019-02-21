@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Header(props) {
-  const { name, surname, cohort } = props.student
+export default function Header (props) {
+  const {name, surname, cohort} = props.student
 
   return (
     <div className="header">
