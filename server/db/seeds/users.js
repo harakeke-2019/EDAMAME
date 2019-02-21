@@ -6,10 +6,12 @@ exports.seed = function (knex, Promise) {
       return knex('users').insert([
         {id: 1,
           name: 'Jane',
+          surname: 'Doe',
           hash: '',
           role: 'facilitator'},
         {id: 2,
           name: 'John',
+          surname: 'Doe',
           hash: '',
           role: 'student'}
       ])
