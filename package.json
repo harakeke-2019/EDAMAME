@@ -12,7 +12,7 @@
     "client": "webpack-dev-server --hot --inline",
     "server": "node server",
     "knex": "knex --knexfile ./server/db/knexfile.js",
-    "updateDb": "rm dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
+    "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
     "test": "jest --watchAll"
   },
   "babel": {
