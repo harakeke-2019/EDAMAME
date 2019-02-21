@@ -10,8 +10,8 @@ function getAssessments( db=connection){
 
 function getAssessmentsById(id, db=connection){
     return db('assessments')
-    .join('students_assessments', 'id', 'assessment_id')
-    .where('id',id)
+    .join('student_assessments', 'assessments.id', 'assessment_id')
+    .where('assessments.id',id)
     .select()
 }
 module.exports ={
