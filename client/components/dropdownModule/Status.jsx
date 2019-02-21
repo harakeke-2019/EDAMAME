@@ -3,7 +3,7 @@ import React from 'react'
 const Status = () =>{
     return (
     <React.Fragment>
-        <h2>Status Component</h2>
+        <h3>[Status Component]</h3>
     <span class="dropdown">
    <select name="STATUS">
     <option value="Not Complete">Not Complete</option>

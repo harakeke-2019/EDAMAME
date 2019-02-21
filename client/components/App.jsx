@@ -8,8 +8,8 @@ const App = () => {
   return (
     <React.Fragment>
       <h1>[React development has begun!]</h1>
-       < DropdownModule />
       <Route Login path="/" component={Login} />
+      < DropdownModule />
     </React.Fragment>
   )
 }
