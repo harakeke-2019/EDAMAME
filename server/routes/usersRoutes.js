@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express()
-const db = require('../DB/db')
+const db = require('../db/db')
 
 router.get('/', (req, res) => {
   db.getUsers()
