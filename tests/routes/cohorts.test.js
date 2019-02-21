@@ -13,7 +13,7 @@ const server = require('../../server/server')
 
 test('GET chorts/:id', () => {
   return request(server)
-    .get('/api/v1/cohorts/2')
+    .get('/api/v1/chorts/2')
     .expect(200)
     .then((res) => {
       const expected = seedData[1].name
