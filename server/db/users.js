@@ -3,12 +3,20 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  newUser
+  newUser: newUser,
+  addCohort: addCohort
 }
 
 // newUser db function for post register route
-function newUser (name, role, cohort, password, db = connection) {
-  return db('relevant database table')
-    .join('join up the tables that need to be populated with registration info? Cos yeah. LOL. Not sure...')
-    .insert({name, role, cohort, hash: password})
+function newUser (name, surname, role, password, db = connection) {
+  return db('users')
+    .returning('id')
+    .insert({name, surname, role, hash: password})
+}
+
+// newUserCohort db function
+
+function addCohort (cohort, db = connection) {
+  return db('students')
+    .insert({cohort})
 }
