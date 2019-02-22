@@ -9,7 +9,7 @@ import Dashboard from './Dashboard'
 const App = () => {
   return (
     <React.Fragment>
-      <Route signin path="/signin" component={Signin} />
+      <Route Signin path="/signin" component={Signin} />
       <Route Dashboard path="/" component={Dashboard} />
 
       <h1>[React development has begun!]</h1>
