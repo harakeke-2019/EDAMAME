@@ -16,7 +16,6 @@ router.get('/:id', (req, res) => {
   const id = req.params.id
     db.getAssessmentsById(id)
     .then(assessment=>{
-        console.log(assessment)
         res.json(assessment)
     })
     .catch(err => {

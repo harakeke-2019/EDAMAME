@@ -1,21 +1,56 @@
-const server = require('../server/server')
+//const server = require('../server/server')
 const request = require('supertest')
 
-test('All systems are go', () => {
-  expect(true).toBeTruthy()
-})
+const seedData =[
+  { id: 1,
+  module_id: 1,
+  title: "1. Use Git and terminal commands to manage a code base",
+  description: "desc",
+  link: "link",
+  week_day: "weekday",
+  student_id: 1,
+  assessment_id: 1,
+  status_id: 4,
+  evidence: "evidence",
+  date_modified: "date"},
 
-test('First title comes back', (done) => {
-  const expected = '1. Use Git and terminal commands to manage a code base'
+  { id: 2,
+  module_id: 1,
+  title: "2. Use npm to manage library dependencies",
+  description: "desc",
+  link: "link",
+  week_day: "weekday",
+  student_id: 1,
+  assessment_id: 2,
+  status_id: 3,
+  evidence: "evidence",
+  date_modified: "date"}
+]
 
-  request(server)
+jest.mock('../server/db/assessmentsDb.js',()=>({
+  getAssessmentsById:() => Promise.resolve({id: 1,
+    module_id: 1,
+    title: "1. Use Git and terminal commands to manage a code base",
+    description: "desc",
+    link: "link",
+    week_day: "weekday",
+    student_id: 1,
+    assessment_id: 1,
+    status_id: 4,
+    evidence: "evidence",
+    date_modified: "date"})
+}))
+
+const server = require('../server/server')
+
+test('GET assessments/:id', () => {
+  return request(server)
     .get('/api/v1/assessments/1')
-    .expect('Content-Type', /json/)
     .expect(200)
-    .end((err, res) => {
-      expect(err).toBeNull()
-      expect(res.body.title).toBe(expected)
-      done()
+    .then((res) => {
+      const expected = seedData[0].status_id
+      const actual = res.body.status_id
+      expect(expected).toBe(actual)
     })
+    .catch(err => expect(err).toBeNull())
 })
-
