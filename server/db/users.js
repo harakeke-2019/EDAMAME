@@ -1,26 +1,24 @@
 const environment = process.env.NODE_ENV || 'development'
-const config = require('./knexfile')[environment]
+const config = require('../../knexfile')[environment]
 const connection = require('knex')(config)
 
-module.exports = {
-  newUser: newUser
+function getUsers (db = connection) {
+  return db('users').select()
 }
 
 // newUser db function for post register route
-function newUser (user, db = connection) {
+function registerUser (user, bcrypt, db = connection) {
   return db('users')
-    .returning('id')
     .insert({
       name: user.name,
       surname: user.surname,
       role: user.role,
-      hash: user.password
+      hash: bcrypt.hashSync(user.hash)
     })
 }
 
-// addCohort db function
-
-// function addCohort (id, cohort, db = connection) {
-//   return db('students')
-//     .insert({cohort})
-// }
+module.exports = {
+  registerUser,
+  getUsers,
+  connection
+}
