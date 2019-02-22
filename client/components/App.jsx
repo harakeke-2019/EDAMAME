@@ -1,6 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-
+import {Route} from 'react-router-dom'
 import DropdownModule from './dropdownModule/DropdownModule'
 import RegistrationForm from './ResgistrationForm'
 import Signin from './Signin'
