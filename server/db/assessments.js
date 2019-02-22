@@ -11,6 +11,7 @@ function updateEvidence(id, evidence, db = connection) {
       evidence: evidence.evidence,
       date_modified: evidence.date
     })
+    .catch(err => err)
 }
 
 module.exports = {

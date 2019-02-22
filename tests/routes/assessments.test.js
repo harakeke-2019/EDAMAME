@@ -6,18 +6,18 @@ test('Test testing environment', () => {
   expect(true).toBeTruthy()
 })
 
-test('index route loads correctly', done => {
+test('Test PUT route "/api/v1/assessments/:id" ', done => {
   request(server)
-    .put('/4')
+    .put('/api/v1/assessments/4')
     .send({
       "evidence" : "new evidence3",
       "date" : "2019-01-24"
     })
     .expect(202)
+    .expect('Content-Type', 'application/json; charset=utf-8')
     .end((err, res)=>{
-      expect(res.body).toBe({
-        "notice": "Evidence has been updated!"
-    })
-      done()
+     expect(err).toBeNull()
+     expect(res.body).toEqual({ notice: 'Evidence has been updated!'})
+     done()
     })
 })
