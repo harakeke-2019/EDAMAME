@@ -20,4 +20,9 @@ router.post('/register', (req, res) => {
   }
 })
 
+router.get('/student/:id?view=modules', (req, res) => {
+  const id = req.params.id
+  db.getModulesById(id)
+})
+
 module.exports = router

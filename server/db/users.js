@@ -3,7 +3,8 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  newUser: newUser
+  newUser,
+  getModulesById
 }
 
 // newUser db function for post register route
@@ -16,6 +17,14 @@ function newUser (user, db = connection) {
       role: user.role,
       hash: user.password
     })
+}
+
+function getModulesById (id, db = connection) {
+  return db('student_assessments')
+    .join('assessments', 'assessments.id', 'student_assessments.student_id')
+    .join('modules', 'modules.id', 'assessments.id')
+    .where('student_assessments.student_id', id)
+    .select()
 }
 
 // addCohort db function
