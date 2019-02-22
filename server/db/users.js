@@ -1,13 +1,16 @@
-const environment = process.env.NODE_ENV || 'development'
-const config = require('./knexfile')[environment]
-const connection = require('knex')(config)
+const connection = require('./')
 
 module.exports = {
+  getUsers,
   newUser,
   getModulesById
 }
 
-// newUser db function for post register route
+function getUsers (db = connection) {
+  return db('users')
+    .select()
+}
+
 function newUser (user, db = connection) {
   return db('users')
     .returning('id')
