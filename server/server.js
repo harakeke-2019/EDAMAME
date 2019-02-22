@@ -13,5 +13,4 @@ server.use(express.static(path.join(__dirname, './public')))
 server.use('/', starterRoute)
 server.use('/api/v1/assessments', assessmentsRoutes)
 server.use('/api/v1/cohorts', cohortRoutes)
-
 module.exports = server

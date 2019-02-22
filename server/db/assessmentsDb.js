@@ -1,6 +1,4 @@
-const environment = 'development'
-const config = require('../../knexfile')[environment]
-const connection = require('knex')(config)
+const connection = require('./index')
 
 function getAssessments( db=connection){
     return db('modules')
