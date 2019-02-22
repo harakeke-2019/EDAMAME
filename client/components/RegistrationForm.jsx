@@ -16,8 +16,13 @@ class RegistrationForm extends React.Component {
   }
 
   handleSubmit (evt) {
-    this.props.saveItem(this.state)
-    this.setState(this.state)
+    this.setState({
+      name: '',
+      surname: '',
+      hash: '',
+      role: '',
+      cohort: ''
+    })
     evt.preventDefault()
   }
 
@@ -25,14 +30,6 @@ class RegistrationForm extends React.Component {
     this.setState({
       [evt.target.name]: evt.target.value
     })
-  }
-
-  resetForm (evt) {
-    this.setState({
-      item: this.state,
-      invalid: {}
-    })
-    evt && evt.preventDefault()
   }
 
   render () {
@@ -83,8 +80,11 @@ class RegistrationForm extends React.Component {
           onChange={this.handleChange}
         />
         <br/>
-        <button type='submit' className='button-primary' value='Add' onSubmit={this.handleSubmit}
-          onClick={this.resetForm}>Register</button>
+        <button type='submit'
+          className='button-primary'
+          value='Add'
+          onClick={this.handleSubmit}
+        >Register</button>
       </form>
     )
   }
