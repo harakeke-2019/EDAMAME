@@ -7,7 +7,7 @@ test('Test testing environment', () => {
 })
 
 test('Test PUT route "/api/v1/assessments/:id" ', done => {
-  request(server)
+  return request(server)
     .put('/api/v1/assessments/4')
     .send({
       "evidence" : "new evidence3",
@@ -15,9 +15,9 @@ test('Test PUT route "/api/v1/assessments/:id" ', done => {
     })
     .expect(202)
     .expect('Content-Type', 'application/json; charset=utf-8')
-    .end((err, res)=>{
-     expect(err).toBeNull()
+    .then((res)=>{
      expect(res.body).toEqual({ notice: 'Evidence has been updated!'})
      done()
     })
+    .catch(err => expect(err).toBeNull())
 })
