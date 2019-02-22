@@ -68,3 +68,6 @@ dev.sqlite3
 
 # Vim tag files
 tags
+
+# Cypress video files
+tests/cypress/videos
