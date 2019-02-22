@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Login() {
+export default function signin () {
   return (
     <div>
-      <h1 className="login">Login</h1>
-      <form className="form" action="#">
+      <h1 className="signin">signin</h1>
+      <form className="form">
         <span>Username </span>
         <input type="text" name="username" />
         <br />

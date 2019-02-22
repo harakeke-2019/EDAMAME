@@ -1,10 +1,11 @@
 import React from 'react'
+import ProgressBar from './ProgressBar'
 
 import ProgressModule from './ProgressModule'
 
 export default function Dashboard() {
   const placeHolderProps = {
-    tally: 20
+    percentage: 20
   }
   return (
     <React.Fragment>
