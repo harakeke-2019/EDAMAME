@@ -1,5 +1,5 @@
 import React from 'react'
-import ProgressBar from './ProgressBart'
+import ProgressBar from './ProgressBar'
 
 export default function Dashboard () {
   return (
