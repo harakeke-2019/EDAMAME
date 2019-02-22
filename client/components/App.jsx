@@ -1,12 +1,15 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import {Route} from 'react-router-dom'
 
-import Login from './Login'
+import signin from './signin'
+import Dashboard from './Dashboard'
 
 const App = () => {
   return (
     <React.Fragment>
-      <Route Login path="/" component={Login} />
+      <Route signin path="/signin" component={signin} />
+      <Route Dashboard path="/" component={Dashboard} />
+
     </React.Fragment>
   )
 }
