@@ -1,5 +1,6 @@
-const bcrypt = require('bcrypt-nodejs')
-const connection = require('./')
+const environment = process.env.NODE_ENV || 'development'
+const config = require('../../knexfile')[environment]
+const connection = require('knex')(config)
 
 module.exports = {
   getUsers,
@@ -11,7 +12,7 @@ function getUsers (db = connection) {
     .select()
 }
 
-function registerUser (user, db = connection) {
+function registerUser (user, bcrypt, db = connection) {
   return db('users')
     .insert({
       name: user.name,
