@@ -1,4 +1,4 @@
-const connection = require('./index')
+const connection = require('./')
 
 function getAssessments( db=connection){
     return db('modules')
