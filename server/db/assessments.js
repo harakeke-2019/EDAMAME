@@ -1,4 +1,4 @@
-const connection = require('./')
+const connection = require('.')
 
 function getAssessments( db=connection){
     return db('assessments')
