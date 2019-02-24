@@ -1,5 +1,5 @@
 const testEnv = require('./test-environment')
-const db = require('../../server/db/assessments')
+const db = require('../../server/db/assessmentsDb')
 
 beforeEach(() => {
   testDb = testEnv.getTestDb()

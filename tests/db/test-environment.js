@@ -1,6 +1,7 @@
 const knex = require('knex')
 const config = require('../../knexfile').test
 
+
 module.exports = {
     // Return a database connection for the test database
     getTestDb: () => knex(config),
