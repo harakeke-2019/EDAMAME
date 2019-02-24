@@ -17,6 +17,6 @@ server.use('/', starterRoute)
 server.use('/api/v1/assessments', assessmentsRoutes)
 server.use('/api/v1/users', usersRoutes)
 server.use('/api/v1/cohorts', cohortRoutes)
-server.use('/api/v1/auth/register', auth)
+server.use('/api/v1/auth/', auth)
 
 module.exports = server
