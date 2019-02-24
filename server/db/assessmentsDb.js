@@ -28,4 +28,5 @@ function updateEvidence(id, evidence, db = connection) {
 module.exports ={
     getAssessmentsById,
     getAssessments,
+    updateEvidence
 }
