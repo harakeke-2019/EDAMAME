@@ -21,9 +21,19 @@ router.post('/register', (req, res) => {
   }
 })
 
-router.get('/student/:id?view=modules', (req, res) => {
+router.get('/student/:id', (req, res) => {
   const id = req.params.id
-  db.getModulesById(id)
+  if (req.query.view === 'modules') {
+    db.getStudentAssessmentStatuses(id)
+      .then(studentAssessmentStatuses => {
+        res.json(studentAssessmentStatuses)
+      })
+      .catch(err => {
+        res.status(500).send(err.message)
+      })
+  } else {
+    res.json('Not built yet!')
+  }
 })
 
 module.exports = router

@@ -3,7 +3,7 @@ const connection = require('./')
 module.exports = {
   getUsers,
   newUser,
-  getModulesById
+  getStudentAssessmentStatuses
 }
 
 function getUsers (db = connection) {
@@ -22,12 +22,11 @@ function newUser (user, db = connection) {
     })
 }
 
-function getModulesById (id, db = connection) {
+function getStudentAssessmentStatuses (id, db = connection) {
   return db('student_assessments')
-    .where('student_assessments.student_id', id)
     // .join('assessments', 'student_assessments.student_id', 'assessments.id')
     // .join('modules', 'assessments.id', 'modules.id')
-    // .where('student_assessments.student_id', id)
+    .where('student_assessments.id', id)
     .select()
 }
 
