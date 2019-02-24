@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import DropdownModule from './dropdownModule/DropdownModule'
-import RegistrationForm from './ResgistrationForm'
+import Login from './Login'
+import RegistrationForm from './RegistrationForm'
 import SignIn from './SignIn'
 import Dashboard from './Dashboard'
 
@@ -12,6 +13,7 @@ const App = () => {
       <Route Dashboard path="/" component={Dashboard} />
 
       <h1>[React development has begun!]</h1>
+      <Route Login path="/" component={Login} />
       <Route path="/register" component={RegistrationForm} />
       <DropdownModule />
     </React.Fragment>
