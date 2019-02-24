@@ -12,8 +12,9 @@
     "client": "webpack-dev-server --hot --inline",
     "server": "nodemon server",
     "knex": "knex --knexfile ./knexfile.js",
-    "updateDb": "concurrently \"rm -f dev.sqlite3\" \"yarn knex migrate:latest\" \" yarn knex seed:run\"",
-    "test": "jest --watchAll"
+    "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
+    "test": "jest --watchAll --testPathIgnorePatterns tests/cypress",
+    "e2e": "nodemon server --ignore server/public & webpack --watch & cypress open"
   },
   "babel": {
     "presets": [
@@ -31,10 +32,13 @@
     ]
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "bootstrap": "^4.3.1",
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "knex": "^0.16.3",
     "path": "^0.12.7",
+    "react-bootstrap": "^1.0.0-beta.5",
     "react-router-dom": "^4.3.1",
     "sqlite3": "^4.0.6",
     "superagent": "^4.1.0",
@@ -47,7 +51,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "cheerio": "^1.0.0-rc.2",
+    "cypress": "^3.1.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "jest": "^24.1.0",
