@@ -5,7 +5,7 @@ exports.up = function (knex, Promise) {
     table.integer('assessment_id')
     table.integer('status_id')
     table.string('evidence')
-    table.string('date_modified')
+    table.timestamp('date_modified').defaultTo(knex.fn.now())
   })
 }
 
