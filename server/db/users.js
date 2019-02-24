@@ -24,9 +24,10 @@ function newUser (user, db = connection) {
 
 function getModulesById (id, db = connection) {
   return db('student_assessments')
-    .join('assessments', 'assessments.id', 'student_assessments.student_id')
-    .join('modules', 'modules.id', 'assessments.id')
     .where('student_assessments.student_id', id)
+    // .join('assessments', 'student_assessments.student_id', 'assessments.id')
+    // .join('modules', 'assessments.id', 'modules.id')
+    // .where('student_assessments.student_id', id)
     .select()
 }
 
