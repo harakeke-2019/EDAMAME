@@ -11,6 +11,7 @@
     "dev": "concurrently 'yarn client' 'yarn server'",
     "client": "webpack --watch",
     "server": "nodemon server --ignore server/public",
+
     "knex": "knex --knexfile ./knexfile.js",
     "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
     "test": "jest --watchAll --testPathIgnorePatterns tests/cypress",
