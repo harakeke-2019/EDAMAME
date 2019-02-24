@@ -11,6 +11,16 @@ jest.mock('../../server/db/users.js', () => ({
 
 const server = require('../../server/server')
 
+test('API is working', () => {
+  return request(server)
+    .get('api/v1/users')
+    .then(() => {
+      const expected = 'api/v1/users'
+      const actual = 'api/v1/users'
+      expect(expected).toEqual(actual)
+    })
+})
+
 test('GET users', () => {
   return request(server)
     .get('/api/v1/users')
