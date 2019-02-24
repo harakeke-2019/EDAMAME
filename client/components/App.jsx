@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import DropdownModule from './dropdownModule/DropdownModule'
 import RegistrationForm from './ResgistrationForm'
-import SignIn from './Signin'
+import SignIn from './SignIn'
 import Dashboard from './Dashboard'
 
 const App = () => {
