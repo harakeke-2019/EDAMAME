@@ -11,7 +11,7 @@ jest.mock('../../server/db/cohorts.js', () => ({
 
 const server = require('../../server/server')
 
-test('GET chorts/:id', () => {
+test('GET cohorts/:id', () => {
   return request(server)
     .get('/api/v1/cohorts/2')
     .expect(200)
