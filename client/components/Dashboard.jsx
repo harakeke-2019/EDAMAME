@@ -2,9 +2,7 @@ import React from 'react'
 import ProgressModule from './ProgressModule'
 import DropdownModule from './dropdownModule/DropdownModule'
 
-
-
-export default function Dashboard() {
+export default function Dashboard () {
   const placeHolderProps = {
     percentage: 20
   }
@@ -22,7 +20,7 @@ export default function Dashboard() {
 
         <ProgressModule placeholder={placeHolderProps} />
         <div>Module 4</div>
-         <DropdownModule />
+        <DropdownModule />
       </div>
     </React.Fragment>
   )

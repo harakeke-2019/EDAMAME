@@ -1,8 +1,6 @@
 import {combineReducers} from 'redux'
-import assessments from './assessments'
-import isLoading from './isLoading'
+import assessmentContent from './assessmentContent'
 
 export default combineReducers({
-  assessments,
-  isLoading
+  assessmentContent
 })

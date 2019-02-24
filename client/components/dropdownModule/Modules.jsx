@@ -2,6 +2,7 @@ import React from 'react'
 import Assessment from './Assessment'
 import {connect} from 'react-redux'
 import {fetchAssessments} from '../../Actions'
+
 class Modules extends React.Component {
   componentDidMount () {
     this.props.dispatch(fetchAssessments())
@@ -10,10 +11,10 @@ class Modules extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <h2>{this.props.isLoading && <span> Loading</span>}</h2>
-        {this.props.assessments && this.props.assessments.map(assessment => {
+        {console.log('moduleSide', this.props.assessmentContent)}
+        {/* {this.props.assessmentContent && this.props.assessmentContent.map(assessment => {
           return <Assessment assessment ={assessment} key={assessment.moduleId} />
-        })}
+        })} */}
       </React.Fragment>
     )
   }
@@ -21,8 +22,8 @@ class Modules extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    assessments: state.assessments,
-    isLoading: state.isLoading
+    assessmentContent: state.assessmentContent
   }
 }
+
 export default connect(mapStateToProps)(Modules)
