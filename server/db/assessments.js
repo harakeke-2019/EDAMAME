@@ -7,6 +7,7 @@ function getAssessments(id, db = connection) {}
 function updateEvidence(id, evidence, db = connection) {
   return db('student_assessments')
     .where('assessment_id', id)
+    .andWhere('student_id', evidence.studentId)
     .update({
       evidence: evidence.evidence,
       date_modified: evidence.date
