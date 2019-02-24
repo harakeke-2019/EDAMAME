@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const URL = 'http:localhost:3000/v1/api'
+const URL = 'http:localhost:3000/v1'
 
 export const assessmentContent = (assesmentId) => {
   return request
