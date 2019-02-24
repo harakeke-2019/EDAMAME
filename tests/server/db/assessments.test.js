@@ -26,7 +26,7 @@ const seedData =[
   date_modified: "date"}
 ]
 
-jest.mock('../server/db/assessmentsDb.js',()=>({
+jest.mock('../../../server/db/assessments.js',()=>({
   getAssessmentsById:() => Promise.resolve({id: 1,
     module_id: 1,
     title: "1. Use Git and terminal commands to manage a code base",
@@ -40,7 +40,7 @@ jest.mock('../server/db/assessmentsDb.js',()=>({
     date_modified: "date"})
 }))
 
-const server = require('../server/server')
+const server = require('../../../server/server')
 
 test('GET assessments/:id', () => {
   return request(server)
