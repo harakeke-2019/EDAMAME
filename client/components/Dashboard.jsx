@@ -1,27 +1,29 @@
-import React from 'react'
-import ProgressBar from './ProgressBar'
-
+import React, { Component } from 'react'
 import ProgressModule from './ProgressModule'
 
-export default function Dashboard() {
-  const placeHolderProps = {
+export default class Dashboard extends Component {
+
+  state = {
     percentage: 20
   }
-  return (
-    <React.Fragment>
+
+  render() {
+    return (
+      <React.Fragment>
       <div className="progress-module">
-        <ProgressModule placeholder={placeHolderProps} />
+        <ProgressModule percentage={this.state.percentage} />
         <div>Module 1</div>
 
-        <ProgressModule placeholder={placeHolderProps} />
+        <ProgressModule percentage={this.state.percentage} />
         <div>Module 2</div>
 
-        <ProgressModule placeholder={placeHolderProps} />
+        <ProgressModule percentage={this.state.percentage} />
         <div>Module 3</div>
 
-        <ProgressModule placeholder={placeHolderProps} />
+        <ProgressModule percentage={this.state.percentage} />
         <div>Module 4</div>
       </div>
     </React.Fragment>
-  )
+    )
+  }
 }
