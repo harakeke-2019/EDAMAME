@@ -1,12 +1,11 @@
 const express = require('express')
-const db = require('../db/users')
 const router = express.Router()
+const db = require('../db/users')
 
 router.get('/', (req, res) => {
   db.getUsers()
     .then(users => {
-      console.log(users)
-      res.send(users)
+      res.json(users)
     })
     .catch(err => {
       res.status(500).send(err.message)
