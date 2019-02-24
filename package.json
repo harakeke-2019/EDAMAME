@@ -8,9 +8,9 @@
   "license": "ISC",
   "scripts": {
     "start": "concurrently 'webpack' 'node server'",
-    "dev": "concurrently 'nodemon server' 'webpack --watch'",
+    "dev": "concurrently 'yarn client' 'yarn server'",
     "client": "webpack-dev-server --hot --inline",
-    "server": "node server",
+    "server": "nodemon server",
     "knex": "knex --knexfile ./knexfile.js",
     "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
     "test": "jest --watchAll --testPathIgnorePatterns tests/cypress",
