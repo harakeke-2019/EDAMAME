@@ -10,7 +10,7 @@
     "start": "concurrently \"webpack\" \"node server\"",
     "dev": "concurrently \"nodemon server\" \"webpack --watch\"",
     "client": "webpack-dev-server --hot --inline",
-    "server": "nodemon server",
+    "server": "node server",
     "knex": "knex --knexfile ./knexfile.js",
     "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
     "test": "jest --watchAll --testPathIgnorePatterns tests/cypress",
