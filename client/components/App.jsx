@@ -1,7 +1,6 @@
 import React from 'react'
-import DropdownModule from './dropdownModule/DropdownModule';
-import { Route } from 'react-router-dom'
-
+import {Route} from 'react-router-dom'
+import Dashboard from './Dashboard'
 import Login from './Login'
 
 const App = () => {
@@ -9,7 +8,7 @@ const App = () => {
     <React.Fragment>
       <h1>[React development has begun!]</h1>
       <Route Login path="/" component={Login} />
-      < DropdownModule />
+      <Dashboard />
     </React.Fragment>
   )
 }
