@@ -7,8 +7,8 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "webpack && node server",
-    "dev": "node server & webpack --watch",
+    "start": "concurrently 'webpack' 'node server'",
+    "dev": "concurrently 'nodemon server' 'webpack --watch'",
     "client": "webpack-dev-server --hot --inline",
     "server": "node server",
     "knex": "knex --knexfile ./knexfile.js",
