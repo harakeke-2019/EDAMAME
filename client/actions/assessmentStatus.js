@@ -9,14 +9,14 @@ export default {
 function REQUEST_STUDENT_ASSESSMENT_STATUS () {
   return {
     type: request,
-    assessment: assessment
+    assessmentStatus: assessmentStatus
   }
 }
 
 function RECEIVE_STUDENT_ASSESSMENT_STATUS () {
   return {
-    type: receive,
-    RECEIVE_STUDENT_ASSESSMENT_STATUS: RECEIVE_STUDENT_ASSESSMENT_STATUS
+    type: RECEIVE_STUDENT_ASSESSMENT_STATUS,
+    assessmentStatus: assessmentStatus
   }
 }
 
