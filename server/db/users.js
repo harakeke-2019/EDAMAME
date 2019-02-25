@@ -22,6 +22,7 @@ function newUser (user, db = connection) {
     })
 }
 
+// function you use to assist with your current issue
 function getStudentAssessmentStatuses (id, db = connection) {
   return db('student_assessments')
     .join('exercises', 'student_assessments.assessment_id', 'exercises.assessment_id')
