@@ -5,6 +5,7 @@ exports.up = function (knex, Promise) {
     table.string('title')
     table.string('description')
     table.string('link')
+    table.string('week_day')
   })
 }
 
