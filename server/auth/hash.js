@@ -1,7 +1,8 @@
 const sodium = require('libsodium-wrappers')
 
 module.exports = {
-  generateHash
+  generateHash,
+  verify
 }
 
 function generateHash (password) {
@@ -13,4 +14,9 @@ function generateHash (password) {
       sodium.crypto_pwhash_MEMLIMIT_MIN
     )
   )
+}
+
+function verify (hash, password) {
+  return sodium.ready.then(() =>
+    sodium.crypto_pwhash_str_verify(hash, password))
 }
