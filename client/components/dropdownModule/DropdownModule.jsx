@@ -380,14 +380,25 @@ class DropdownModule extends Component {
           >
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>
-                {this.state.module1.assessment1.moduleTitle}
+                {this.state.module1[0].assessment1.moduleTitle}
               </Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
+
+      {this.state.module1.map( (obj) => {
+        return (
+          {obj.map( el => {
+            
+          })}
+        )
+      })}
+      </ExpansionPanel>
+            {/* <ExpansionPanelDetails>
               <Typography>
                 <a href="#">{this.state.module1.assessment1.assessmentsTitle}</a>
               </Typography>
             </ExpansionPanelDetails>
+
+
             <ExpansionPanelDetails>
               <Typography>
               <a href="#">{this.state.module1.assessment2.assessmentsTitle}</a>
@@ -536,7 +547,7 @@ class DropdownModule extends Component {
               <a href="#">{this.state.module4.assessment6.assessmentsTitle}</a>
               </Typography>
             </ExpansionPanelDetails>
-          </ExpansionPanel>
+          </ExpansionPanel> */}
         </div>
       </React.Fragment>
     )
