@@ -1,11 +1,13 @@
 import React from 'react'
 import CircularProgressbar from 'react-circular-progressbar'
 
-export default function ProgressModule(props) {
-  
+export default function ProgressModule (props) {
   return (
     <React.Fragment>
-      <CircularProgressbar percentage={props.percentage} text={`${props.percentage}%`} />
+      <div>
+        <CircularProgressbar percentage={props.percentage} text={`${props.percentage}%`} />
+      </div>
     </React.Fragment>
+
   )
 }

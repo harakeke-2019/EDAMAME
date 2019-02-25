@@ -12,12 +12,18 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/register', (req, res) => {
-  db.newUser(req.body)
-    .then(res.redirect('/'))
-    .catch(displayErr)
-  function displayErr (err) {
-    res.status(500).send(err.message)
+router.get('/student/:id', (req, res) => {
+  const id = req.params.id
+  if (req.query.view === 'modules') {
+    db.getStudentAssessmentStatuses(id)
+      .then(studentAssessmentStatuses => {
+        res.json(studentAssessmentStatuses)
+      })
+      .catch(err => {
+        res.status(500).send(err.message)
+      })
+  } else {
+    res.json('Not built yet!')
   }
 })
 

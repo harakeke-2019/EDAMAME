@@ -10,8 +10,6 @@ const App = () => {
     <React.Fragment>
       <Route SignIn path="/signin" component={SignIn} />
       <Route Dashboard path="/" component={Dashboard} />
-
-      <h1>[React development has begun!]</h1>
       <Route path="/register" component={RegistrationForm} />
       <DropdownModule />
     </React.Fragment>
