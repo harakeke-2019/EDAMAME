@@ -8,10 +8,14 @@ import Dashboard from './Dashboard'
 const App = () => {
   return (
     <React.Fragment>
-      <Route SignIn path="/signin" component={SignIn} />
-      <Route Dashboard path="/" component={Dashboard} />
+      <Route exact path ="/signin" component={SignIn} />
+      <Route exact path="/" render = {() => (
+        <React.Fragment>
+          <Dashboard/>
+          <DropdownModule/>
+        </React.Fragment>
+      )}/>
       <Route path="/register" component={RegistrationForm} />
-      <DropdownModule />
     </React.Fragment>
   )
 }
