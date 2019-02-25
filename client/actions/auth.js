@@ -20,15 +20,16 @@ export const registerError = error => {
   }
 }
 
-export const register = (name, surname, password) => {
-  request
+export const register = (name, surname, password) => dispatch => {
+  dispatch(registerPending())
+  return request
     .get('http:localhost:3000/api/v1/auth/register')
     .send({name, surname, password})
     .then(res => {
       setToken(res.body.token)
       dispatch(registerSuccess())
     })
-    .catch(err => registerError(err.response.body.error))
+    .catch(err => dispatch(registerError(err.response.body.error)))
 }
 
 export const logout = _ => {
