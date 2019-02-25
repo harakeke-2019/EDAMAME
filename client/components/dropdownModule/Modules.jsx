@@ -1,13 +1,21 @@
 import React from 'react'
 import Assessment from './Assessment'
+import {connect} from 'react-redux'
+import {getAssessmentContent} from '../../actions'
 
-const Modules = () => {
-  return (
-    <React.Fragment>
-      <h2>[Placeholder - Modules] </h2>
-      <Assessment />
-    </React.Fragment>
-  )
+class Modules extends React.Component () {
+
+  componentDidMount () {
+    this.props.dispatch(getAssessmentContent())
+  }
+  render(){
+    return (
+      <React.Fragment>
+        <h2>[Placeholder - Modules] </h2>
+        <Assessment />
+      </React.Fragment>
+    )
+  }  
 }
 
-export default Modules
+export default connect (mapStateToProps)(Modules)
