@@ -16,6 +16,22 @@ module.exports = {
     }
   },
 
+
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: ':memory:'
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: 'tests/db/migrations'
+    },
+    seeds: {
+      directory: 'tests/db/seeds'
+    }
+  },
+  
+  
   staging: {
     client: 'postgresql',
     connection: {
