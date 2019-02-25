@@ -9,11 +9,11 @@ const initialAssessmentState = {
 // Handles an array of objects which are filled with assessment info
 const AssessmentContent = (state = initialAssessmentState, action) => {
   switch (action.type) {
-    case 'REQUEST_STUDENT_ASSESSMENT_STATUSES':
+    case 'REQUEST_STUDENT_ASSESSMENT_STATUS':
       return {
         assessment: ?
       }
-    case 'RECIEVE_STUDENT_ASSESSMENT_STATUSES':
+    case 'RECIEVE_STUDENT_ASSESSMENT_STATUS':
       return {
         assessment: ?
       }
