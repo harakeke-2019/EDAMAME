@@ -20,7 +20,6 @@ export const signinError = error => {
   }
 }
 
-// user = {name, surname, password}
 export const signin = (user) => dispatch => {
   dispatch(signinPending())
   return signinApi(user)

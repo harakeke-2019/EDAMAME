@@ -2,7 +2,7 @@ import {getToken} from '../utils/tokens'
 
 const initialState = {
   error: null,
-  loggedIn: !!getToken(), // Coerces object to boolean, so either returns true or false
+  loggedIn: !!getToken(),
   newRegistration: false,
   pending: false
 }
