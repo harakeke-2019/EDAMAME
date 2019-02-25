@@ -6,7 +6,6 @@ export default function ProgressBar (props) {
   const percentage2 = 20
   const percentage3 = 30
   const percentage4 = 15
-  // const percentage = props.placeHolderFromModule
 
   return (
     <React.Fragment>
