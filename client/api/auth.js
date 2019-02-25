@@ -1,4 +1,17 @@
 import request from 'superagent'
+
+export const signin = (name, surname, password) => dispatch => {
+  dispatch(signinPending())
+  return request
+    .post('/api/v1/auth/signin')
+    .send({name, surname, password})
+    .then(res => {
+      setToken(res.body.token)
+      dispatch(signinSuccess())
+    })
+    .catch(err => dispatch(signinFailure(err.response.body.message)))
+}
+
 export const setToken = token => localStorage.setItem('ACCESS-TOKEN', token)
 
 export const signinPending = () => ({
@@ -13,14 +26,3 @@ export const signinFailure = error => ({
     type: 'SIGNIN_FAILURE', error
 })
 
-export const signin = (username, password) => dispatch => {
-  dispatch(signinPending())
-  return request
-    .post('/api/v1/auth/signin')
-    .send({username, password})
-    .then(res => {
-      setToken(res.body.token)
-      dispatch(signinSuccess())
-    })
-    .catch(err => dispatch(signinFailure(err.response.body.error)))
-}
