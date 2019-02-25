@@ -7,7 +7,7 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "concurrently 'webpack' 'node server'",
+    "start": "concurrently \"node server\" \"webpack --watch\"",
     "dev": "concurrently 'yarn client' 'yarn server'",
     "client": "webpack --watch",
     "server": "nodemon server --ignore server/public",
