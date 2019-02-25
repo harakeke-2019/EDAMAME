@@ -1,18 +1,16 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-import DropdownModule from './dropdownModule/DropdownModule'
+import { Route, Switch } from 'react-router-dom'
 import RegistrationForm from './RegistrationForm'
 import SignIn from './SignIn'
 import Dashboard from './Dashboard'
 
 const App = () => {
   return (
-    <React.Fragment>
-      <Route SignIn path="/signin" component={SignIn} />
-      <Route Dashboard path="/" component={Dashboard} />
+    <Switch>
+      <Route exact path="/" component={Dashboard} />
+      <Route path="/signin" component={SignIn} />
       <Route path="/register" component={RegistrationForm} />
-      <DropdownModule />
-    </React.Fragment>
+    </Switch>
   )
 }
 
