@@ -24,9 +24,9 @@ function newUser (user, db = connection) {
 
 function getStudentAssessmentStatuses (id, db = connection) {
   return db('student_assessments')
-    // .join('assessments', 'student_assessments.student_id', 'assessments.id')
-    // .join('modules', 'assessments.id', 'modules.id')
-    .where('student_assessments.id', id)
+    .join('assessments', 'student_assessments.assessment_id', 'assessments.id')
+    .join('modules', 'assessments.module_id', 'modules.id')
+    .where('student_assessments.student_id', id)
     .select()
 }
 
