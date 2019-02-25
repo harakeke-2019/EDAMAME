@@ -1,14 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BrowserRouter as Router} from 'react-router-dom'
+import {render} from 'react-dom'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
 
+// Imports our app
 import App from './components/App'
+
+// Enables us to view our store in the redux devtools
+const store = createStore(AssessmentContent,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Router>
+    <Provider store={store}>
       <App />
-    </Router>,
+      </Provider>
     document.getElementById('root')
   )
 })
