@@ -2,12 +2,12 @@ import {getToken} from '../utils/tokens'
 
 const initialState = {
     error: null,
-    loggedIn: !!getToken(),
+    loggedIn: !!getToken(), //Coerces object to boolean, so either returns true or false
     newRegistration: false,
     pending: false
 }
 
-const authReducer = (state = initialState, action) => {
+export default authReducer = (state = initialState, action) => {
     switch(action.type){
         case 'REGISTER_PENDING':
             return {
