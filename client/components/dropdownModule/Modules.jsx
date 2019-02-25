@@ -11,10 +11,7 @@ class Modules extends React.Component {
   render () {
     return (
       <React.Fragment>
-        {console.log('moduleSide', this.props.assessmentContent)}
-        {/* {this.props.assessmentContent && this.props.assessmentContent.map(assessment => {
-          return <Assessment assessment ={assessment} key={assessment.moduleId} />
-        })} */}
+        <Assessment />
       </React.Fragment>
     )
   }
