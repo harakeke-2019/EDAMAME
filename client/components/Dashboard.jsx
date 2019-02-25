@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ProgressModule from './ProgressModule'
+import ProgressBar from './ProgressBar'
 
 export default class Dashboard extends Component {
 
@@ -12,7 +13,11 @@ export default class Dashboard extends Component {
 
   render() {
     return (
-      <React.Fragment>
+    <React.Fragment>
+      <div className="progressBar">
+        <ProgressBar />
+      </div>
+
       <div className="progress-module">
         <div><ProgressModule percentage={this.state.percentage1} />
         Tracked Item 1</div>
