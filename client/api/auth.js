@@ -4,7 +4,7 @@ const url = 'http://localhost:3000'
 
 export function register (user) {
   return request
-    .get(`${url}/api/v1/auth/register`)
+    .post(`${url}/api/v1/auth/register`)
     .send(user)
     .then(res => res.body)
 }
