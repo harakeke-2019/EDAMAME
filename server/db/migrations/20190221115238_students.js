@@ -3,7 +3,8 @@ exports.up = function (knex, Promise) {
     table.increments('id').primary()
     table.integer('user_id').references('users.id')
     table.integer('cohort_id').references('cohorts.id')
-    table.string('name')
+    table.string('first_name').notNullable()
+    table.string('last_name')
   })
 }
 
