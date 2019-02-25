@@ -10,7 +10,7 @@ export default function Login() {
         <br />
         <br />
         <span>Password </span>
-        <input type="text" name="password" />
+        <input type="password" name="password" />
         <br />
         <br />
         <input type="submit" value="Submit" />
