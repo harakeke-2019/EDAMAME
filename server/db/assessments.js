@@ -9,7 +9,7 @@ function getAssessments (db = connection) {
 
 function getAssessmentsById (id, db = connection) {
   return db('assessments')
-    .join('student_assessments', 'assessments.id', 'assessment_id')
+    .join('students_assessments', 'assessments.id', 'assessment_id')
     .where('assessments.id', id)
     .select()
 }
