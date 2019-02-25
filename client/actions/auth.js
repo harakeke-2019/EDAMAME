@@ -1,5 +1,5 @@
-import request from 'superagent'
 import {setToken} from '../utils/tokens'
+import {register as registerApi} from '../api/auth'
 
 export const registerPending = _ => {
   return {
@@ -20,11 +20,9 @@ export const registerError = error => {
   }
 }
 
-export const register = (name, surname, password) => dispatch => {
+export const register = (user) => dispatch => {
   dispatch(registerPending())
-  return request
-    .get('/api/v1/auth/register')
-    .send({name, surname, password})
+  return registerApi(user)
     .then(res => {
       setToken(res.body.token)
       dispatch(registerSuccess())
