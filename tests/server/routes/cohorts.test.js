@@ -5,11 +5,11 @@ const seedData = [
   {id: 2, name: 'Kauri', year: '2019', campus: 'Auckland'}
 ]
 
-jest.mock('../../server/db/cohorts.js', () => ({
+jest.mock('../../../server/db/cohorts.js', () => ({
   getCohort: () => Promise.resolve({id: 2, name: 'Kauri', year: '2019', campus: 'Auckland'})
 }))
 
-const server = require('../../server/server')
+const server = require('../../../server/server')
 
 test('GET cohorts/:id', () => {
   return request(server)

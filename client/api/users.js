@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const apiUrl = 'http://localhost:3000/api/v1'
+const userUrl = 'http://localhost:3000/api/v1/users'
 
 export function getAssessments () {
   return request
@@ -13,7 +13,7 @@ export function getAssessments () {
 
 export function getUsers () {
   request
-    .get(`${apiUrl}/users`)
+    .get(`${userUrl}/`)
     .then(res => res.body)
     .catch(err => {
       if (err) throw Error('Cannot get users')

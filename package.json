@@ -7,10 +7,10 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "webpack && node server",
-    "dev": "node server & webpack --watch",
-    "client": "webpack-dev-server --hot --inline",
-    "server": "node server",
+    "start": "concurrently 'webpack' 'node server'",
+    "dev": "concurrently 'yarn client' 'yarn server'",
+    "client": "webpack --watch",
+    "server": "nodemon server --ignore server/public",
     "knex": "knex --knexfile ./knexfile.js",
     "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
     "test": "jest --watchAll --testPathIgnorePatterns tests/cypress",
@@ -63,7 +63,6 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-cli": "^3.2.1"
   }
 }
