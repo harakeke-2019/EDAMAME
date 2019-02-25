@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EvidenceUrl = () => {
+const Evidence = () => {
   return (
     <React.Fragment>
       <h3>[Placeholder Completion Evidence - Github repo URL] - </h3>
@@ -9,4 +9,4 @@ const EvidenceUrl = () => {
   )
 }
 
-export default EvidenceUrl
+export default Evidence
