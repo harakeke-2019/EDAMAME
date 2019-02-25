@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function SignIn() {
+export default function Login() {
   return (
     <div>
-      <h1 className="signin">SignIn</h1>
+      <h1 className="login">Login</h1>
       <form className="form">
         <span>Username </span>
         <input type="text" name="username" />
