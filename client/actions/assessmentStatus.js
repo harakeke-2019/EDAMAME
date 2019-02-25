@@ -1,28 +1,20 @@
-import {createStore} from 'redux' // creates a store
-
-// The untouched state
-const initialAssessmentState = {
-
+export default {
+  REQUEST_STUDENT_ASSESSMENT_STATUS,
+  RECEIVE_STUDENT_ASSESSMENT_STATUS
 }
 
-// Reducer and actions
-// Handles an array of objects which are filled with assessment info
-const AssessmentContent = (state = initialAssessmentState, action) => {
-  switch (action.type) {
-    case 'REQUEST_STUDENT_ASSESSMENT_STATUS':
-      return {
-        assessment: ?
-      }
-    case 'RECIEVE_STUDENT_ASSESSMENT_STATUS':
-      return {
-        assessment: ?
-      }
-      default:
-      return state
+// Write the actions as functions as you can see in the actions file for redux minimal
+
+function REQUEST_STUDENT_ASSESSMENT_STATUS () {
+  return {
+    type: request,
+    assessment: assessment
   }
 }
 
-// Enables us to view our store in the redux devtools
-const store = createStore(AssessmentContent, 
-  window.__REDUX_DEVTOOLS_EXTENSION__&&window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+function RECEIVE_STUDENT_ASSESSMENT_STATUS () {
+  return {
+    type: receive,
+    RECEIVE_STUDENT_ASSESSMENT_STATUS: RECEIVE_STUDENT_ASSESSMENT_STATUS
+  }
+}
