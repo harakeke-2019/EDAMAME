@@ -1,3 +1,6 @@
+import request from 'superagent'
+import {setToken} from '../utils/tokens'
+
 export const registerPending = _ => {
   return {
     type: 'REGISTER_PENDING'
@@ -18,5 +21,18 @@ export const registerError = error => {
 }
 
 export const register = (name, surname, password) => {
-  //API call
+  request
+    .get('http:localhost:3000/api/v1/auth/register')
+    .send({name, surname, password})
+    .then(res => {
+      setToken(res.body.token)
+      dispatch(registerSuccess())
+    })
+    .catch(err => registerError(err.response.body.error))
+}
+
+export const logout = _ => {
+  return {
+    type: 'LOGOUT'
+  }
 }
