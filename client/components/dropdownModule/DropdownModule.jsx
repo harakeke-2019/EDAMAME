@@ -6,6 +6,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import Divider from '@material-ui/core/Divider'
 
 const styles = theme => ({
   root: {
@@ -19,6 +20,11 @@ const styles = theme => ({
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary
+  },
+  description: {
+    fontSize: theme.typography.pxToRem(15),
+    flexBasis: '100%',
+    flexShrink: 0
   }
 })
 
@@ -99,7 +105,7 @@ class DropdownModule extends Component {
                 {this.state.module1.moduleTitle}
               </Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
+            <ExpansionPanelDetails className={classes.description}>
               <Typography>
                 {this.state.module1.assessmentsTitle}
                 <br />
