@@ -1,18 +1,17 @@
 export default {
-  REQUEST_STUDENT_ASSESSMENT_STATUS,
-  RECEIVE_STUDENT_ASSESSMENT_STATUS
+  requestAssessmentStatus,
+  receiveAssessmentStatus
 }
 
-function REQUEST_STUDENT_ASSESSMENT_STATUS () {
+function requestAssessmentStatus () {
   return {
-    type: request,
-    assessmentStatus: assessmentStatus
+    type: 'REQUEST_STUDENT_ASSESSMENT_STATUS'
   }
 }
 
-function RECEIVE_STUDENT_ASSESSMENT_STATUS () {
+function receiveAssessmentStatus (assessmentStatus) {
   return {
-    type: RECEIVE_STUDENT_ASSESSMENT_STATUS,
+    type: 'RECEIVE_STUDENT_ASSESSMENT_STATUS',
     assessmentStatus: assessmentStatus
   }
 }
