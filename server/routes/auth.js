@@ -5,7 +5,7 @@ const token = require('../auth/token')
 const hash = require('../auth/hash')
 
 router.post('/register', register, token.issue)
-router.post('/login', validateLogin, checkUser, token.issue)
+router.post('/signin', validateLogin, checkUser, token.issue)
 
 function register (req, res, next) {
   db.registerUser(req.body)
@@ -14,16 +14,9 @@ function register (req, res, next) {
       next()
     })
     .catch(({message}) => {
-      if (message.includes('user exists')) {
-        return res.status(400).json({
-          ok: false,
-          message: 'User already exists.'
-        })
-      }
-      res.status(500).json({
-        ok: false,
-        message: "Something bad happened. We don't know why."
-      })
+      message.includes('user exists')
+        ? registrationError(res, 'User already exists.', 400)
+        : registrationError(res, `Something bad happened. We don't know why.`, 500)
     })
 }
 
@@ -62,6 +55,13 @@ function checkUser (req, res, next) {
 function invalidCredentials (res) {
   res.status(400).json({
     errorType: 'INVALID_CREDENTIALS'
+  })
+}
+
+function registrationError (res, errorMessage, errorCode) {
+  res.status(errorCode).json({
+    ok: false,
+    message: errorMessage
   })
 }
 
