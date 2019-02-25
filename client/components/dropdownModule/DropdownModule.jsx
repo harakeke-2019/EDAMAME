@@ -31,7 +31,7 @@ const styles = theme => ({
 class DropdownModule extends Component {
   state = {
     expanded: null,
-    module1: { 
+    module1: [ {
       assessment1: {
       moduleId: 1,
       moduleTitle: 'Module 1: Core Programming',
@@ -44,7 +44,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }}, 
+    {
     assessment2: {
         moduleId: 1,
         moduleTitle: 'Module 1: Core Programming',
@@ -57,7 +58,7 @@ class DropdownModule extends Component {
         exerciseId: null,
         exerciseTitle:
           ''
-    },
+    }}, {
     assessment3: {
       moduleId: 1,
       moduleTitle: 'Module 1: Core Programming',
@@ -70,7 +71,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }},
+    {
     assessment4: {
       moduleId: 1,
       moduleTitle: 'Module 1: Core Programming',
@@ -83,7 +85,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }},
+    {
     assessment5: {
       moduleId: 1,
       moduleTitle: 'Module 1: Core Programming',
@@ -96,7 +99,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }},
+    {
     assessment6: {
       moduleId: 1,
       moduleTitle: 'Module 1: Core Programming',
@@ -109,9 +113,9 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
-    },
-    module2: {
+    }},
+  ],
+    module2: [{
       assessment1: {
       moduleId: 2,
       moduleTitle: 'Module 2: Web development',
@@ -124,7 +128,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }},
+    {
     assessment2:{
       moduleId: 2,
       moduleTitle: 'Module 2: Web development',
@@ -137,7 +142,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }},
+    {
     assessment3: {
       moduleId: 2,
       moduleTitle: 'Module 2: Web development',
@@ -150,7 +156,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }},
+    {
     assessment4: {
       moduleId: 2,
       moduleTitle: 'Module 2: Web development',
@@ -163,7 +170,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }},
+    {
     assessment5: {
       moduleId: 2,
       moduleTitle: 'Module 2: Web development',
@@ -176,7 +184,8 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
+    }},
+    {
     assessment6: {
       moduleId: 2,
       moduleTitle: 'Module 2: Web development',
@@ -189,9 +198,9 @@ class DropdownModule extends Component {
       exerciseId: null,
       exerciseTitle:
         ''
-    },
-  },
-    module3: {
+    }}
+],
+    module3: [{
       assessment1: {
         moduleId: 3,
       moduleTitle: 'Module 3: Team Work and Leadership',
@@ -203,7 +212,8 @@ class DropdownModule extends Component {
       week_day: 'weekday',
       exerciseId: null,
       exerciseTitle: ''
-      },
+      }},
+      {
       assessment2: {
         moduleId: 3,
         moduleTitle: 'Module 3: Team Work and Leadership',
@@ -215,7 +225,8 @@ class DropdownModule extends Component {
         week_day: 'weekday',
         exerciseId: null,
         exerciseTitle: ''
-      },
+      }},
+      {
       assessment3: {
         moduleId: 3,
         moduleTitle: 'Module 3: Team Work and Leadership',
@@ -227,7 +238,8 @@ class DropdownModule extends Component {
         week_day: 'weekday',
         exerciseId: null,
         exerciseTitle: ''
-      },
+      }},
+      {
       assessment4: {
         moduleId: 3,
         moduleTitle: 'Module 3: Team Work and Leadership',
@@ -239,7 +251,8 @@ class DropdownModule extends Component {
         week_day: 'weekday',
         exerciseId: null,
         exerciseTitle: ''
-      },
+      }},
+      {
       assessment5: {
         moduleId: 3,
         moduleTitle: 'Module 3: Team Work and Leadership',
@@ -251,7 +264,8 @@ class DropdownModule extends Component {
         week_day: 'weekday',
         exerciseId: null,
         exerciseTitle: ''
-      },
+      }},
+      {
       assessment6: {
         moduleId: 3,
         moduleTitle: 'Module 3: Team Work and Leadership',
@@ -263,9 +277,10 @@ class DropdownModule extends Component {
         week_day: 'weekday',
         exerciseId: null,
         exerciseTitle: ''
-      },
-    },
-    module4: {
+      }}
+    ],
+    module4: [
+      {
       assessment1: {
       moduleId: 4,
       moduleTitle: 'Module 4: Human Skills',
@@ -277,7 +292,8 @@ class DropdownModule extends Component {
       week_day: 'weekday',
       exerciseId: null,
       exerciseTitle: ''
-    },
+    }},
+    {
     assessment2: {
       moduleId: 4,
       moduleTitle: 'Module 4: Human Skills',
@@ -289,7 +305,8 @@ class DropdownModule extends Component {
       week_day: 'weekday',
       exerciseId: null,
       exerciseTitle: ''
-    },
+    }},
+    {
     assessment3: {
       moduleId: 4,
       moduleTitle: 'Module 4: Human Skills',
@@ -301,7 +318,8 @@ class DropdownModule extends Component {
       week_day: 'weekday',
       exerciseId: null,
       exerciseTitle: ''
-    },
+    }},
+    {
     assessment4: {
       moduleId: 4,
       moduleTitle: 'Module 4: Human Skills',
@@ -313,7 +331,8 @@ class DropdownModule extends Component {
       week_day: 'weekday',
       exerciseId: null,
       exerciseTitle: ''
-    },
+    }},
+    {
     assessment5: {
       moduleId: 4,
       moduleTitle: 'Module 4: Human Skills',
@@ -325,7 +344,8 @@ class DropdownModule extends Component {
       week_day: 'weekday',
       exerciseId: null,
       exerciseTitle: ''
-    },
+    }},
+    {
     assessment6: {
       moduleId: 4,
       moduleTitle: 'Module 4: Human Skills',
@@ -337,8 +357,8 @@ class DropdownModule extends Component {
       week_day: 'weekday',
       exerciseId: null,
       exerciseTitle: ''
-    }
-  }
+    }}
+ ]
 }
 
   handleChange = panel => (event, expanded) => {
