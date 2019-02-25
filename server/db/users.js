@@ -4,6 +4,7 @@ const {generateHash} = require('../auth/hash')
 module.exports = {
   getUsers,
   registerUser,
+  handleSignin,
   getStudentAssessmentStatuses
 }
 
@@ -32,6 +33,16 @@ function registerUser (user, db = connection) {
     })
 }
 
+function handleSignin (user, db = connection) {
+  return db('users')
+    .where({
+      name: user.name,
+      surname: user.surname
+    })
+    .first()
+}
+
+// function you use to assist with your current issue
 function getStudentAssessmentStatuses (id, db = connection) {
   return db('student_assessments')
     .join('exercises', 'student_assessments.assessment_id', 'exercises.assessment_id')
