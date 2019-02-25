@@ -4,7 +4,7 @@ const {generateHash} = require('../auth/hash')
 module.exports = {
   getUsers,
   registerUser,
-  handleSignin,
+  handleLogin,
   getStudentAssessmentStatuses
 }
 
@@ -33,7 +33,7 @@ function registerUser (user, db = connection) {
     })
 }
 
-function handleSignin (user, db = connection) {
+function handleLogin (user, db = connection) {
   return db('users')
     .where({
       name: user.name,
