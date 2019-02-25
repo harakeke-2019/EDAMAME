@@ -22,8 +22,15 @@ module.exports = {
     connection: {
       filename: ':memory:'
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
+    migrations: {
+      directory: 'tests/db/migrations'
+    },
+    seeds: {
+      directory: 'tests/db/seeds'
+    }
   },
+  
   
   staging: {
     client: 'postgresql',
