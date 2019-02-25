@@ -1,8 +1,10 @@
-const connection = require('./')
+const connection = require('./index')
+const {generateHash} = require('../auth/hash')
 
 module.exports = {
   getUsers,
-  newUser,
+  registerUser,
+  handleSignin,
   getStudentAssessmentStatuses
 }
 
@@ -11,15 +13,33 @@ function getUsers (db = connection) {
     .select()
 }
 
-function newUser (user, db = connection) {
-  return db('users')
-    .returning('id')
-    .insert({
-      name: user.name,
-      surname: user.surname,
-      role: user.role,
-      hash: user.password
+function registerUser (user, db = connection) {
+  return generateHash(user.password)
+    .then(hash => {
+      return db('users')
+        .where({
+          name: user.name,
+          surname: user.surname
+        })
+        .then(res => {
+          if (res.length === 0) {
+            user.hash = hash
+            delete user.password
+            return db('users').insert(user)
+          } else {
+            throw new Error('user exists')
+          }
+        })
     })
+}
+
+function handleSignin (user, db = connection) {
+  return db('users')
+    .where({
+      name: user.name,
+      surname: user.surname
+    })
+    .first()
 }
 
 // function you use to assist with your current issue

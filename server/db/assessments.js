@@ -9,11 +9,25 @@ function getAssessments( db=connection){
 
 function getAssessmentsById(id, db=connection){
     return db('assessments')
-    .join('student_assessments', 'assessments.id', 'assessment_id')
+    .join('students_assessments', 'assessments.id', 'assessment_id')
     .where('assessments.id',id)
     .select()
 }
+
+function updateEvidence(id, evidence, db = connection) {
+    return db('student_assessments')
+      .where('assessment_id', id)
+      .andWhere('student_id', evidence.studentId)
+      .update({
+        evidence: evidence.evidence,
+        date_modified: evidence.date
+      })
+      .catch(err => err)
+  }
+
+
 module.exports ={
     getAssessmentsById,
     getAssessments,
+    updateEvidence
 }
