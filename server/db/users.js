@@ -1,6 +1,4 @@
-const environment = process.env.NODE_ENV || 'development'
-const config = require('../../knexfile')[environment]
-const connection = require('knex')(config)
+const connection = require('./index')
 const {generateHash} = require('../auth/hash')
 
 module.exports = {
