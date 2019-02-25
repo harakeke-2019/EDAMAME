@@ -65,7 +65,7 @@
     "nodemon": "^1.18.10",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "webpack": "^4.29.0",
+    "webpack": "^4.29.5",
     "webpack-cli": "^3.2.1"
   }
 }
