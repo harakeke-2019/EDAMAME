@@ -65,3 +65,27 @@
   .CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
     stroke: transparent;
   }
+
+  /* Evidence Component Styling */
+  .ul1 {
+    list-style-type: none;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 25px;
+    padding: 0;
+  }
+
+  .eveHeader {
+    margin: 100px
+  }
+
+  .eveSub {
+    margin: 75px
+  }
+
+  .eveSub2 {
+    margin: 50px
+  }
