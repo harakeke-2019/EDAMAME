@@ -40,6 +40,11 @@ export default function authReducer (state = initialState, action) {
         pending: false
 
       }
+    case 'LOGOUT':
+      return {
+        ...state,
+        loggedIn: false
+      }
     default:
       return state
   }
