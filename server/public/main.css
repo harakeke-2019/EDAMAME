@@ -3,7 +3,13 @@
  *
  * All of the styles in this file are optional and configurable!
  */
+/* STYLING FOR THE LINEAR PROGRESS BAR */
+ .progressBar {
+  width: 90%;
+  padding: 20px 10px 20px 10px;
+}
 
+/* STYLING FOR THE CIRCULAR PROGRESS MODULE */
 .progress-module {
  display: flex;
  flex: wrap;
@@ -64,4 +70,24 @@
   
   .CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
     stroke: transparent;
+  }
+
+  .home{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .home h1{
+    position: relative;
+    top: 10%;
+  }
+
+  .link{
+    position: relative;
+    top: 30%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 26px;
   }
