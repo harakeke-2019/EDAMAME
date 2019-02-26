@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button'
 export default function SignIn() {
   return (
     <div>
-      <h1>SIGN IN COMPONENT</h1>
       <TextField
         varient="outlined"
         label="firstname" />
