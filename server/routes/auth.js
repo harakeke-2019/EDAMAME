@@ -5,7 +5,7 @@ const token = require('../auth/token')
 const hash = require('../auth/hash')
 
 router.post('/register', register, token.issue)
-router.post('/signin', validateLogin, checkUser, token.issue)
+router.post('/login', validateLogin, checkUser, token.issue)
 
 function register (req, res, next) {
   db.registerUser(req.body)
@@ -37,7 +37,7 @@ function validateLogin (req, res, next) {
 }
 
 function checkUser (req, res, next) {
-  db.handleSignin(req.body)
+  db.handleLogin(req.body)
     .then(user => {
       if (user) res.locals.userId = user.id
       return user && hash.verify(user.hash, req.body.password)

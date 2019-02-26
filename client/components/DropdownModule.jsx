@@ -1,14 +1,17 @@
-// Aubrey Ngapeita David
 import React from 'react'
-import Modules from './Modules'
+// import {getModules} from '../../api'
 
 const DropdownModule = () => {
-
   return (
     <React.Fragment>
       <h1>DropdownModule Component</h1>
-      <Modules />
+      <ul>
+        {/* {this.state.moduleList.map(module => {
+          return (<li>module</li>
+        })} */}
+      </ul>
     </React.Fragment>
   )
 }
+
 export default DropdownModule
