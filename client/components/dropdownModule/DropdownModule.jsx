@@ -386,168 +386,90 @@ class DropdownModule extends Component {
 
       {this.state.module1.map( (obj) => {
         return (
-          {obj.map( el => {
-            
-          })}
+          Object.values(obj).map((el) => {
+            return(
+            <ExpansionPanelDetails>
+              {console.log(el)}
+              <Typography>
+              <a href="#">{el.assessmentsTitle}</a>
+              </Typography>
+            </ExpansionPanelDetails>
+            )
+          })
         )
-      })}
+      }
+      )}
       </ExpansionPanel>
-            {/* <ExpansionPanelDetails>
-              <Typography>
-                <a href="#">{this.state.module1.assessment1.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-
-
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module1.assessment2.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module1.assessment3.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module1.assessment4.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module1.assessment5.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module1.assessment6.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel
-            expanded={expanded === 'module2'}
-            onChange={this.handleChange('module2')}
-          >
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+      <ExpansionPanel>
+      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>
-                {this.state.module2.assessment1.moduleTitle}
+                {this.state.module2[0].assessment1.moduleTitle}
               </Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                <a href="#">{this.state.module2.assessment1.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module2.assessment2.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module2.assessment3.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module2.assessment4.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module2.assessment5.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module2.assessment6.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
 
-          <ExpansionPanel
-            expanded={expanded === 'module3'}
-            onChange={this.handleChange('module3')}
-          >
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+      {this.state.module2.map( (obj) => {
+        return (
+          Object.values(obj).map((el) => {
+            return(
+            <ExpansionPanelDetails>
+              {console.log(el)}
+              <Typography>
+              <a href="#">{el.assessmentsTitle}</a>
+              </Typography>
+            </ExpansionPanelDetails>
+            )
+          })
+        )
+      }
+      )}
+      </ExpansionPanel>
+      <ExpansionPanel>
+      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>
-                {this.state.module3.assessment1.moduleTitle}
+                {this.state.module3[0].assessment1.moduleTitle}
               </Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                <a href="#">{this.state.module3.assessment1.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module3.assessment2.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module3.assessment3.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module3.assessment4.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module3.assessment5.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module3.assessment6.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
 
-          <ExpansionPanel
-            expanded={expanded === 'module4'}
-            onChange={this.handleChange('module4')}
-          >
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+      {this.state.module3.map( (obj) => {
+        return (
+          Object.values(obj).map((el) => {
+            return(
+            <ExpansionPanelDetails>
+              {console.log(el)}
+              <Typography>
+              <a href="#">{el.assessmentsTitle}</a>
+              </Typography>
+            </ExpansionPanelDetails>
+            )
+          })
+        )
+      }
+      )}
+      </ExpansionPanel>
+      <ExpansionPanel>
+      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>
-                {this.state.module4.assessment1.moduleTitle}
+                {this.state.module4[0].assessment1.moduleTitle}
               </Typography>
             </ExpansionPanelSummary>
+
+      {this.state.module4.map( (obj) => {
+        return (
+          Object.values(obj).map((el) => {
+            return(
             <ExpansionPanelDetails>
+              {console.log(el)}
               <Typography>
-                <a href="#">{this.state.module4.assessment1.assessmentsTitle}</a>
+              <a href="#">{el.assessmentsTitle}</a>
               </Typography>
             </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module4.assessment2.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module4.assessment3.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module4.assessment4.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module4.assessment5.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-            <ExpansionPanelDetails>
-              <Typography>
-              <a href="#">{this.state.module4.assessment6.assessmentsTitle}</a>
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel> */}
+            )
+          })
+        )
+      }
+      )}
+
+      </ExpansionPanel>
         </div>
       </React.Fragment>
     )
