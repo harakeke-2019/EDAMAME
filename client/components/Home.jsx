@@ -5,6 +5,7 @@ export default function Home () {
   return (
     <React.Fragment>
       <div className="home">
+      <h1>Welcome to Edamame</h1>
         <div className="link">
           <Link to="/register" >Register</Link>
         </div>
