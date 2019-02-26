@@ -1,5 +1,5 @@
 import React from 'react'
-import connect from 'react-redux'
+import {connect} from 'react-redux'
 
 import {register, registerError} from '../actions/auth'
 
@@ -32,10 +32,6 @@ class RegistrationForm extends React.Component {
       surname: '',
       hash: ''
     })
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault()
   }
 
   handleChange = (event) => {
@@ -106,7 +102,7 @@ class RegistrationForm extends React.Component {
           type='submit' 
           className='button-primary' 
           value='Add' 
-          onSubmit={this.handleSubmit}
+          onClick={this.register}
           >
         Register</button>
       </form>
