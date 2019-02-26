@@ -5,9 +5,8 @@
  */
 /* STYLING FOR THE LINEAR PROGRESS BAR */
  .progressBar {
-  width: 80%;
-  align-items: center;
-  margin: 20px 10px 20px 10px;
+  width: 90%;
+  padding: 20px 10px 20px 10px;
 }
 
 /* STYLING FOR THE CIRCULAR PROGRESS MODULE */
