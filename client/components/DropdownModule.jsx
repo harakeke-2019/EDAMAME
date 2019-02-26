@@ -1,6 +1,4 @@
-// Aubrey Ngapeita David
 import React from 'react'
-import Modules from './Modules'
 // import {getModules} from '../../api'
 
 const DropdownModule = () => {
@@ -26,7 +24,6 @@ const DropdownModule = () => {
           return (<li>module</li>
         })} */}
       </ul>
-      <Modules />
     </React.Fragment>
   )
 }
