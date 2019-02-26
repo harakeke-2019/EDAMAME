@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import ProgressModule from './ProgressModule'
 import DropdownModule from './DropdownModule'
 import Header from './Header'
+import Evidence from './Evidence'
 
 export default class Dashboard extends Component {
   state = {
@@ -43,6 +44,7 @@ export default class Dashboard extends Component {
           </div>
         </div>
         <DropdownModule />
+        <Evidence />
       </React.Fragment>
     )
   }

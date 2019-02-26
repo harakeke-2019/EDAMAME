@@ -78,14 +78,24 @@
     padding: 0;
   }
 
-  .eveHeader {
-    margin: 100px
+  .eveTitle {
+    margin: 100px 100px 50px 100px
   }
 
   .eveSub {
-    margin: 75px
+    margin: 75px 100px 50px 100px
   }
 
-  .eveSub2 {
+  .eveDescription {
     margin: 50px
+  }
+
+  .eveLinks {
+    margin: 50px
+  }
+
+  .eveLine {
+    color: grey;
+    height: 1;
+    width: 80%;
   }
