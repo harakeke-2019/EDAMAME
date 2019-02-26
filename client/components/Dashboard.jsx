@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import ProgressModule from './ProgressModule'
 import DropdownModule from './DropdownModule'
 import Header from './Header'
-
+import ProgressBar from './ProgressBar'
 export default class Dashboard extends Component {
   state = {
     percentage1: 25,
@@ -21,6 +21,10 @@ export default class Dashboard extends Component {
     return (
       <React.Fragment>
         <Header student={this.state.student} />
+        <div className="progressBar">
+        <ProgressBar/></div>
+        <br/>
+
         <div className="progress-module">
           <div>
             <ProgressModule percentage={this.state.percentage1} />
