@@ -28,6 +28,7 @@ export default class Dashboard extends Component {
         <div><ProgressModule percentage={this.state.percentage4} />
         Tracked Item 4</div>
       </div>
+      <DropdownModule />
     </React.Fragment>
     )
   }

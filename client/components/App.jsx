@@ -1,16 +1,16 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import Register from './Register'
+import Login from './Login'
 import Dashboard from './Dashboard'
-import RegistrationForm from './RegistrationForm'
-import SignIn from './SignIn'
 
 const App = () => {
   return (
-    <React.Fragment>
-      <Route SignIn path="/signin" component={SignIn} />
-      <Route Dashboard path="/" component={Dashboard} />
-      <Route path="/register" component={RegistrationForm} />
-    </React.Fragment>
+    <Switch>
+      <Route exact path="/" component={Dashboard} />
+      <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
+    </Switch>
   )
 }
 
