@@ -1,11 +1,11 @@
 import React from 'react'
-//import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signin } from '../actions/auth'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-class SignIn extends React.Component {
+class Login extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -48,4 +48,4 @@ class SignIn extends React.Component {
 }
 
 // const mapStateToProps = ({ auth }) => ({ auth })
-export default connect()(SignIn)
+export default connect()(Login)
