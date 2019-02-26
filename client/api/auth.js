@@ -8,3 +8,9 @@ export function register (user) {
     .send(user)
     .then(res => res.body)
 }
+
+export const signin = (user) => {
+  return request
+    .post(`${url}/signin`)
+    .send({ user })
+    .then(res => res.body)

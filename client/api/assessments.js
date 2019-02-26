@@ -1,12 +1,12 @@
 import request from 'superagent'
 
-const assessmentsUrl = 'http://localhost:3000/api/v1/assessments'
+const URL = 'http:localhost:3000/api/v1/assessments'
 
-export function getAssessments () {
+export const assessmentContent = (assesmentId) => {
   return request
-    .get(assessmentsUrl)
-    .then(assessmentContent => assessmentContent.body)
+    .get(`${URL}/${assesmentId}`)
+    .then(res => res.body)
     .catch(err => {
-      if (err) throw Error('Cannot get Assessments')
+      throw new Error(err)
     })
 }
