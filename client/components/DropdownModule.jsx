@@ -24,7 +24,6 @@ const DropdownModule = () => {
           return (<li>module</li>
         })} */}
       </ul>
-      <Modules />
     </React.Fragment>
   )
 }
