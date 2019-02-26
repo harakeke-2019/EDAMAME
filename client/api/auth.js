@@ -12,6 +12,6 @@ export function register (user) {
 export const signin = (user) => {
   return request
     .post(`${url}/signin`)
-    .send({ user })
+    .send({user})
     .then(res => res.body)
-}    
+}
