@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import AssessmentStatus from './AssessmentStatus'
+import assessmentStatus from './assessmentStatus'
 
 export default combineReducers({
-AssessmentStatus
+  assessmentStatus
 })
