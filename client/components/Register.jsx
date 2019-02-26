@@ -159,6 +159,7 @@ class Register extends React.Component {
           </Paper>
         </Grid>
       </Grid>
+
     )
   }
 }
