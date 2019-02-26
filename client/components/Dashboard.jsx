@@ -44,7 +44,6 @@ export default class Dashboard extends Component {
           </div>
         </div>
         <DropdownModule />
-        <Evidence />
       </React.Fragment>
     )
   }
