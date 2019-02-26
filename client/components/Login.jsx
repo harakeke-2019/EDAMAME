@@ -1,9 +1,9 @@
 import React from 'react'
-// import { Redirect } from 'react-router-dom'
+//import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signin } from '../actions/auth'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+// import TextField from '@material-ui/core/TextField'
+// import Button from '@material-ui/core/Button'
 
 class Login extends React.Component {
   constructor (props) {
@@ -25,10 +25,16 @@ class Login extends React.Component {
     const { name, surname, password } = this.state
     return (
       <div className='signin'>
-        <TextField id='firstname' name='name' placeholder='firstname' onChange={this.handleChange} value={name} />
-        <TextField id='lastname' name='surname' placeholder='lastname' onChange={this.handleChange} value={surname} />
-        <TextField id='password' name='password' placeholder='password' onChange={this.handleChange} value={password} type='password'/>
-        <Button name='signinBtn' id='signinBtn' onClick={this.handleSubmit}>Sign in</Button>
+        <div>
+         Firstname:  <input id='firstname' name='name' placeholder='firstname' onChange={this.handleChange} value={name} />
+        </div>
+        <div>
+          Lastname: <input id='lastname' name='surname' placeholder='lastname' onChange={this.handleChange} value={surname} />
+        </div>
+        <div>
+          Password: <input id='password' name='password' placeholder='password' onChange={this.handleChange} value={password} type='password'/>
+        </div>
+        <button name='signinBtn' id='signinBtn' onClick={this.handleSubmit}>Sign in</button>
       </div>
     )
   }
@@ -43,6 +49,10 @@ class Login extends React.Component {
   handleSubmit (e) {
     const user = this.state
     this.props.dispatch(signin(user))
+    this.setState({
+      name: '',
+      surname: '',
+      password: '' })
     e.preventDefault()
   }
 }
