@@ -72,19 +72,53 @@
     stroke: transparent;
   }
 
-  .home{
+  /* Evidence Component Styling */
+  .ul1 {
+    list-style-type: none;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 25px;
+    padding: 0;
+  }
+
+  .eveTitle {
+    margin: 100px 100px 50px 100px
+  }
+
+  .eveSub {
+    margin: 75px 100px 50px 100px
+  }
+
+  .eveDescription {
+    margin: 50px
+  }
+
+  .eveLinks {
+    margin: 50px
+  }
+
+  .eveLine {
+    color: grey;
+    height: 1;
+    width: 80%;
+  }
+
+  .home {
     position: absolute;
     width: 100vw;
     height: 100vh;
     text-align: center;
   }
 
-  .home h1{
+  .home h1 {
     position: relative;
     top: 10%;
   }
 
-  .link{
+  .link {
     position: relative;
     top: 30%;
     margin: 5px;

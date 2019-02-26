@@ -3,6 +3,7 @@ import ProgressModule from './ProgressModule'
 import DropdownModule from './DropdownModule'
 import Header from './Header'
 import ProgressBar from './ProgressBar'
+
 export default class Dashboard extends Component {
   state = {
     percentage1: 25,
