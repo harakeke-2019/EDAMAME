@@ -73,4 +73,17 @@
     stroke: transparent;
   }
 
-  
+  .home{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .link{
+    position: relative;
+    top: 40%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 26px;
+  }
