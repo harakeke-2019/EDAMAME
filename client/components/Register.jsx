@@ -1,29 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Paper from '@material-ui/core/Paper'
-import Grid from '@material-ui/core/Grid'
-import TextField from '@material-ui/core/TextField'
-import OutlinedInput from '@material-ui/core/OutlinedInput'
-import FormControl from '@material-ui/core/FormControl'
-import Select from '@material-ui/core/Select'
-import MenuItem from '@material-ui/core/MenuItem'
-import InputLabel from '@material-ui/core/InputLabel'
+import { Paper,
+  Grid,
+  TextField,
+  OutlinedInput,
+  FormControl,
+  Select,
+  MenuItem,
+  InputLabel } from '@material-ui/core'
 
 class Register extends React.Component {
-state = {
-      name: '',
-      surname: '',
-      password: '',
-      role: '',
-      cohort: '',
-      labelWidth: 0
-    }
+  state = {
+    name: '',
+    surname: '',
+    password: '',
+    role: '',
+    cohort: '',
+    labelWidth: 0
+  }
   
-    componentDidMount() {
-      this.setState({
-        labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
-      })
-    }
+  componentDidMount() {
+    this.setState({
+      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
+    })
+  }
 
   handleSubmit (evt) {
     this.props.saveItem(this.state)
@@ -50,11 +50,11 @@ state = {
         color: 'grey'
       }
     }
+    
     return (
-
       <Grid>
         <Grid item xs={6}>
-            <Paper style={styles.paper} >
+          <Paper style={styles.paper} >
             <h1>Register</h1>
               <form >
                 <br/>
@@ -156,14 +156,11 @@ state = {
                 <br/>
                 <br/>
               </form>
-
-            </Paper>
+          </Paper>
         </Grid>
       </Grid>
-
     )
   }
 }
 
 export default Register
-
