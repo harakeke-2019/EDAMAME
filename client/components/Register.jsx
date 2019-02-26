@@ -1,18 +1,28 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import { Paper,
+  Grid,
+  TextField,
+  OutlinedInput,
+  FormControl,
+  Select,
+  MenuItem,
+  InputLabel } from '@material-ui/core'
 
 class Register extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      name: '',
-      surname: '',
-      hash: '',
-      role: '',
-      cohort: ''
-    }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+  state = {
+    name: '',
+    surname: '',
+    password: '',
+    role: '',
+    cohort: '',
+    labelWidth: 0
+  }
+  
+  componentDidMount() {
+    this.setState({
+      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
+    })
   }
 
   handleSubmit (evt) {
@@ -21,10 +31,8 @@ class Register extends React.Component {
     evt.preventDefault()
   }
 
-  handleChange (evt) {
-    this.setState({
-      [evt.target.name]: evt.target.value
-    })
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   resetForm (evt) {
@@ -36,59 +44,122 @@ class Register extends React.Component {
   }
 
   render () {
+    const styles = {
+      paper: {
+        textAlign: 'center',
+        color: 'grey'
+      }
+    }
+    
     return (
-      <form>
-        <label htmlFor='name'>First name</label>
-        <br/>
-        <input type='text' placeholder='First name' name='name'
-          className='u-full-width'
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-        <br/>
-        <br/>
-        <label htmlFor='surname'>Surname</label>
-        <br/>
-        <input type='text' placeholder='Last name' name='surname'
-          className='u-full-width'
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-        <br/>
-        <br/>
-        <label htmlFor='hash'>Hash</label>
-        <br/>
-        <input type='password' placeholder='Password' name='password'
-          className='u-full-width'
-          value={this.state.description}
-          onChange={this.handleChange}
-        />
-        <br/>
-        <br/>
-        <label htmlFor='role'>Role</label>
-        <br/>
-        <select placeholder='Are you a student or a teacher?' name='role'
-          className='u-full-width'
-          value={this.state.description}
-          onChange={this.handleChange}
-        >
-          <option value="student">Student</option>
-          <option value="teacher">Teacher</option>
-        </select>
-        <br/>
-        <br/>
-        {/* cohort will be a drop down box */}
-        <label htmlFor='cohort'>Cohort</label>
-        <br/>
-        <input type='text' name='cohort' placeholder='Your cohort'
-          className='u-full-width'
-          value={this.state.description}
-          onChange={this.handleChange}
-        />
-        <br/>
-        <button type='submit' className='button-primary' value='Add' onSubmit={this.handleSubmit}
-          onClick={this.resetForm}>Register</button>
-      </form>
+      <Grid>
+        <Grid item xs={6}>
+          <Paper style={styles.paper} >
+            <h1>Register</h1>
+              <form >
+                <br/>
+                <br/>
+                <TextField
+                  variant="outlined"
+                  label="First name"
+                  name='name'
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+                <br/>
+                <br/>
+                <TextField
+                  variant="outlined"
+                  label="Last name"
+                  name='surname'
+                  value={this.state.surname}
+                  onChange={this.handleChange}
+                />
+                <br/>
+                <br/>
+                <TextField
+                  variant="outlined"
+                  type='password'
+                  label="Password"
+                  name='password'
+                  className='u-full-width'
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+                <br/>
+                <br/>
+
+                <FormControl variant="outlined" style={{minWidth: '200px'}} >
+                  <InputLabel
+                    ref={ref => {
+                      this.InputLabelRef = ref 
+                    }}
+                    htmlFor="role"
+                  >
+                 Role
+                  </InputLabel>
+                  <Select
+                    value={this.state.role}
+                    onChange={this.handleChange}
+                    input={
+                      <OutlinedInput
+                        labelWidth={this.state.labelWidth}
+                        name='role'
+                        id="role"
+                      />
+                    }
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={'Student'}>Student</MenuItem>
+                    <MenuItem value={'Teacher'}>Teacher</MenuItem>
+                  </Select>
+                </FormControl>
+
+                <br/>
+                <br/>
+
+                <FormControl variant="outlined" style={{minWidth: '200px'}} >
+                  <InputLabel
+                    ref={ref => {
+                      this.InputLabelRef = ref // comeback to this
+                    }}
+                    htmlFor="Cohort"
+                  >
+                Cohort
+                  </InputLabel>
+                  <Select
+                    value={this.state.cohort}
+                    onChange={this.handleChange}
+                    input={
+                      <OutlinedInput
+                        labelWidth={this.state.labelWidth}
+                        name='cohort'
+                        id="cohort"
+                      />
+                    }
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={'Harakeke2019'}>Harakeke2019</MenuItem>
+                    <MenuItem value={'Kowhai2018'}>Kowhai2018</MenuItem>
+                  </Select>
+                </FormControl>
+                <br/>
+                <br/>
+                <br/>
+                <button type='submit' className='button-primary' value='Add' onSubmit={this.handleSubmit}
+                  onClick={this.resetForm}>Register</button>
+                <br/>
+                <br/>
+                <br/>
+              </form>
+          </Paper>
+        </Grid>
+      </Grid>
+
     )
   }
 }
