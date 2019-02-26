@@ -2,7 +2,6 @@ import request from 'superagent'
 
 const url = 'http://localhost:3000/api/v1/users/student'
 
-// ACTIONS
 export function requestAssessmentStatus () {
   return {
     type: 'REQUEST_STUDENT_ASSESSMENT_STATUS'
