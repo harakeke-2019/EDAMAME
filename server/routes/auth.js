@@ -8,6 +8,7 @@ router.post('/register', register, token.issue)
 router.post('/login', validateLogin, checkUser, token.issue)
 
 function register (req, res, next) {
+  console.log(req.body)
   db.registerUser(req.body)
     .then(([id]) => {
       res.locals.userId = id

@@ -1,5 +1,5 @@
 import {setToken} from '../utils/tokens'
-import {register as registerApi} from '../api/auth'
+import {registerApi} from '../api/auth'
 
 export const registerPending = _ => {
   return {
@@ -21,6 +21,7 @@ export const registerError = error => {
 }
 
 export const register = (user) => dispatch => {
+  console.log(user)
   dispatch(registerPending())
   return registerApi(user)
     .then(res => {

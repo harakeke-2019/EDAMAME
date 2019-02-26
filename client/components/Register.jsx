@@ -3,34 +3,34 @@ import {connect} from 'react-redux'
 
 import {register, registerError} from '../actions/auth'
 
-class RegistrationForm extends React.Component {
+export class Register extends React.Component {
     state = {
       name: '',
       surname: '',
-      hash: ''
+      password: ''
       // role: '',
       // cohort: ''
     }
 
-  register = () => {
-    const {name, surname, hash} = this.state
+  registering = () => {
+    const { name, surname, password } = this.state
 
     if(!name) {
-      return this.props.dispatch(registerError('User must provide name'))
+      return this.props.dispatch(registerFailure('Must provide name.'))
     }
     if(!surname) {
-      return this.props.dispatch(registerError('User must provide surname'))
+      return this.props.dispatch(registerFailure('Must provide surname.'))
     }
-    if(!hash) {
-      return this.props.dispatch(registerError('User must provide hash'))
+    if(!password) {
+      return this.props.dispatch(registerFailure('Must provide email.'))
     }
 
-    this.props.dispatch(register(name, surname, hash))
+    this.props.dispatch(register({name, surname, password}))
 
     this.setState({
       name: '',
       surname: '',
-      hash: ''
+      password: ''
     })
   }
 
@@ -75,11 +75,33 @@ class RegistrationForm extends React.Component {
           placeholder='Password' 
           name='password'
           className='u-full-width'
-          value={this.state.hash}
+          value={this.state.password}
           onChange={this.handleChange}
         />
         <br/>
         <br/>
+        <br/>
+        <button 
+          type='submit' 
+          className='button-primary' 
+          value='Add' 
+          onClick={this.registering}
+          >
+        Register</button>
+      </form>
+    )
+  }
+}
+
+const mapStateToProps = ({auth}) => {
+  return {
+    auth
+  }
+}
+
+export default connect(mapStateToProps)(Register)
+
+
         {/* <label htmlFor='role'>Role</label>
         <br/>
         <input type='text' placeholder='Are you a student or a teacher?' name='role'
@@ -97,23 +119,3 @@ class RegistrationForm extends React.Component {
           value={this.state.cohor}
           onChange={this.handleChange}
         />  */}
-        <br/>
-        <button 
-          type='submit' 
-          className='button-primary' 
-          value='Add' 
-          onClick={this.register}
-          >
-        Register</button>
-      </form>
-    )
-  }
-}
-
-const mapStateToProps = ({auth}) => {
-  return {
-    auth
-  }
-}
-
-export default connect(mapStateToProps(RegistrationForm))
