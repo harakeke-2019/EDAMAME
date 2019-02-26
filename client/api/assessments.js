@@ -1,8 +1,8 @@
 import request from 'superagent'
 
-const URL = 'http:localhost:3000/api/v1/assessments'
+const URL = 'http://localhost:3000/api/v1/assessments'
 
-export const assessmentContent = (assesmentId) => {
+export const assessmentContentById = (assesmentId) => {
   return request
     .get(`${URL}/${assesmentId}`)
     .then(res => res.body)
