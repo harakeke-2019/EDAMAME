@@ -2,7 +2,8 @@ import {createStore} from 'redux'
 
 // Similar to Beers exercise, I am writing the initial state that changes depending on whatever is below.
 
-// In initialState we set our properties to nothing. Because depending on the actions in our reducer, it will fill in these properties with different things.
+// The properties in initialState are empty because depending on the actions in our reducer
+// The actions in our reducer will fill our initial state with different things
 
 const initialState = {
   evidence: '',
@@ -13,9 +14,8 @@ const initialState = {
   moduleTitle: '',
   assessmentDescription: ''
 }
-// REDUCER
-// This reducer handles an array of objects filled with assessment info
 
+// REDUCER FOR ASSESSMENT STATUSES
 const AssessmentStatuses = (state = initialState, action) => {
   switch (action.type) {
     case 'REQUEST_STUDENT_ASSESSMENT_STATUS':
@@ -30,3 +30,7 @@ const AssessmentStatuses = (state = initialState, action) => {
       return state
   }
 }
+
+// This reducer handles an array of objects filled with student statuses and evidence
+
+export default AssessmentStatuses
