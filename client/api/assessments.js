@@ -10,3 +10,12 @@ export const assessmentContentById = (assesmentId) => {
       throw new Error(err)
     })
 }
+
+export function getAssessments () {
+  return request
+    .get(URL)
+    .then(assessments => assessments.body)
+    .catch(err => {
+      if (err) throw Error('Cannot get assessments')
+    })
+}
