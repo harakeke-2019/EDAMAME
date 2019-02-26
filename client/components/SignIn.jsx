@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+//import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signin } from '../actions/auth'
 import TextField from '@material-ui/core/TextField'
@@ -18,9 +18,9 @@ class SignIn extends React.Component {
   }
 
   render () {
-    if (this.props.auth.loggedIn) {
-      return <Redirect to='/' />
-    }
+    // if (this.props.auth.loggedIn) {
+    //   return <Redirect to='/' />
+    // }
 
     const { name, surname, password } = this.state
     return (
@@ -47,5 +47,5 @@ class SignIn extends React.Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => ({ auth })
-export default connect(mapStateToProps)(SignIn)
+// const mapStateToProps = ({ auth }) => ({ auth })
+export default connect()(SignIn)
