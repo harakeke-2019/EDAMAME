@@ -7,9 +7,9 @@ export class Register extends React.Component {
     state = {
       name: '',
       surname: '',
-      password: ''
-      // role: '',
-      // cohort: ''
+      password: '',
+      role: '',
+      cohort: ''
     }
 
   registering = () => {
@@ -41,11 +41,9 @@ export class Register extends React.Component {
   }
 
   render () {
-    console.log(this.state)
     return (
       <form>
         <label htmlFor='name'>First name</label>
-        <br/>
         <input 
           type='text' 
           placeholder='First name' 
@@ -54,10 +52,7 @@ export class Register extends React.Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <br/>
-        <br/>
         <label htmlFor='surname'>Surname</label>
-        <br/>
         <input 
           type='text' 
           placeholder='Last name' 
@@ -66,10 +61,6 @@ export class Register extends React.Component {
           value={this.state.surname}
           onChange={this.handleChange}
         />
-        <br/>
-        <br/>
-        <label htmlFor='hash'>Hash</label>
-        <br/>
         <input 
           type='password' 
           placeholder='Password' 
@@ -78,9 +69,22 @@ export class Register extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <br/>
-        <br/>
-        <br/>
+        <label htmlFor='role'>Role</label>
+        <select placeholder='Are you a student or a teacher?' name='role'
+          className='u-full-width'
+          value={this.state.role}
+          onChange={this.handleChange}
+        >
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+        {/* cohort will be a drop down box */}
+        <label htmlFor='cohort'>Cohort</label>
+        <input type='text' name='cohort' placeholder='Your cohort'
+          className='u-full-width'
+          value={this.state.cohor}
+          onChange={this.handleChange}
+        /> 
         <button 
           type='submit' 
           className='button-primary' 
@@ -93,32 +97,5 @@ export class Register extends React.Component {
   }
 }
 
-const mapStateToProps = ({auth}) => {
-  return {
-    auth
-  }
-}
-
+const mapStateToProps = ({auth}) => ({auth})
 export default connect(mapStateToProps)(Register)
-
-
-        {/* <label htmlFor='role'>Role</label>
-        <br/>
-        <select placeholder='Are you a student or a teacher?' name='role'
-          className='u-full-width'
-          value={this.state.role}
-          onChange={this.handleChange}
-        >
-          <option value="student">Student</option>
-          <option value="teacher">Teacher</option>
-        </select>
-        <br/>
-        <br/>
-        {/* cohort will be a drop down box */}
-        {/* <label htmlFor='cohort'>Cohort</label>
-        <br/>
-        <input type='text' name='cohort' placeholder='Your cohort'
-          className='u-full-width'
-          value={this.state.cohor}
-          onChange={this.handleChange}
-        />  */}
