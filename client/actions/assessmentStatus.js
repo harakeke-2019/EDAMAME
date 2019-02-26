@@ -1,15 +1,10 @@
-export default {
-  requestAssessmentStatus,
-  receiveAssessmentStatus
-}
-
-function requestAssessmentStatus () {
+export function requestAssessmentStatus () {
   return {
     type: 'REQUEST_STUDENT_ASSESSMENT_STATUS'
   }
 }
 
-function receiveAssessmentStatus (assessmentStatus) {
+export function receiveAssessmentStatus (assessmentStatus) {
   return {
     type: 'RECEIVE_STUDENT_ASSESSMENT_STATUS',
     assessmentStatus: assessmentStatus
