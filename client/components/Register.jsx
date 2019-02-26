@@ -9,6 +9,9 @@ import { Paper,
   MenuItem,
   InputLabel } from '@material-ui/core'
 
+import {connect} from 'react-redux'
+import {register, registerError} from '../actions/auth'
+
 class Register extends React.Component {
   state = {
     name: '',
@@ -25,22 +28,30 @@ class Register extends React.Component {
     })
   }
 
-  handleSubmit (evt) {
-    this.props.saveItem(this.state)
-    this.setState(this.state)
-    evt.preventDefault()
+  registering = () => {
+    const { name, surname, password } = this.state
+
+    if(!name) {
+      return this.props.dispatch(registerFailure('Must provide name.'))
+    }
+    if(!surname) {
+      return this.props.dispatch(registerFailure('Must provide surname.'))
+    }
+    if(!password) {
+      return this.props.dispatch(registerFailure('Must provide email.'))
+    }
+
+    this.props.dispatch(register({name, surname, password}))
+
+    this.setState({
+      name: '',
+      surname: '',
+      password: ''
+    })
   }
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-  }
-
-  resetForm (evt) {
-    this.setState({
-      item: this.state,
-      invalid: {}
-    })
-    evt && evt.preventDefault()
   }
 
   render () {
@@ -57,8 +68,6 @@ class Register extends React.Component {
           <Paper style={styles.paper} >
             <h1>Register</h1>
               <form >
-                <br/>
-                <br/>
                 <TextField
                   variant="outlined"
                   label="First name"
@@ -66,8 +75,6 @@ class Register extends React.Component {
                   value={this.state.name}
                   onChange={this.handleChange}
                 />
-                <br/>
-                <br/>
                 <TextField
                   variant="outlined"
                   label="Last name"
@@ -75,8 +82,6 @@ class Register extends React.Component {
                   value={this.state.surname}
                   onChange={this.handleChange}
                 />
-                <br/>
-                <br/>
                 <TextField
                   variant="outlined"
                   type='password'
@@ -86,9 +91,6 @@ class Register extends React.Component {
                   value={this.state.password}
                   onChange={this.handleChange}
                 />
-                <br/>
-                <br/>
-
                 <FormControl variant="outlined" style={{minWidth: '200px'}} >
                   <InputLabel
                     ref={ref => {
@@ -117,9 +119,6 @@ class Register extends React.Component {
                   </Select>
                 </FormControl>
 
-                <br/>
-                <br/>
-
                 <FormControl variant="outlined" style={{minWidth: '200px'}} >
                   <InputLabel
                     ref={ref => {
@@ -147,14 +146,12 @@ class Register extends React.Component {
                     <MenuItem value={'Kowhai2018'}>Kowhai2018</MenuItem>
                   </Select>
                 </FormControl>
-                <br/>
-                <br/>
-                <br/>
-                <button type='submit' className='button-primary' value='Add' onSubmit={this.handleSubmit}
-                  onClick={this.resetForm}>Register</button>
-                <br/>
-                <br/>
-                <br/>
+                <button 
+                  type='submit' 
+                  className='button-primary' 
+                  value='Add' 
+                  onClick={this.registering}
+                  >Register</button>
               </form>
           </Paper>
         </Grid>
@@ -164,4 +161,5 @@ class Register extends React.Component {
   }
 }
 
-export default Register
+const mapStateToProps = ({auth}) => ({auth})
+export default connect(mapStateToProps)(Register)

@@ -1,5 +1,6 @@
 import {setToken} from '../utils/tokens'
-import {register as registerApi, signin as signinApi} from '../api/auth'
+import {registerWithApi, signinWithApi} from '../api/auth'
+
 
 export const signinPending = _ => {
   return {
@@ -41,7 +42,7 @@ export const registerError = error => {
 
 export const signin = (user) => dispatch => {
   dispatch(signinPending())
-  return signinApi(user)
+  return signinWithApi(user)
     .then(res => {
       setToken(res.body.token)
       dispatch(signinSuccess())
@@ -51,7 +52,7 @@ export const signin = (user) => dispatch => {
 
 export const register = (user) => dispatch => {
   dispatch(registerPending())
-  return registerApi(user)
+  return registerWithApi(user)
     .then(res => {
       setToken(res.body.token)
       dispatch(registerSuccess())

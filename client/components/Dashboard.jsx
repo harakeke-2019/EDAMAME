@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import ProgressModule from './ProgressModule'
 import DropdownModule from './DropdownModule'
