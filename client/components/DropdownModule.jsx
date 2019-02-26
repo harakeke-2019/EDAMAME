@@ -2,20 +2,6 @@ import React from 'react'
 // import {getModules} from '../../api'
 
 const DropdownModule = () => {
-//    constructor (props){
-//        super(props)
-//        this.state={
-//             moduleList:[]
-//        }
-//    }
-
-  //    componentDidMount(){
-  //        getModules()
-  //         .then(moduleList=>{
-  //             this.setState({moduleList})
-  //         })
-  //         .catch(err=>console.log('error',err))
-  //    }
   return (
     <React.Fragment>
       <h1>DropdownModule Component</h1>
@@ -27,4 +13,5 @@ const DropdownModule = () => {
     </React.Fragment>
   )
 }
+
 export default DropdownModule
