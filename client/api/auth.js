@@ -14,3 +14,4 @@ export const signin = (user) => {
     .post(`${url}/signin`)
     .send({ user })
     .then(res => res.body)
+}    
