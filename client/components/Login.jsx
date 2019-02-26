@@ -2,8 +2,6 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signin } from '../actions/auth'
-// import TextField from '@material-ui/core/TextField'
-// import Button from '@material-ui/core/Button'
 
 class Login extends React.Component {
   constructor (props) {
