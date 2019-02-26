@@ -38,7 +38,7 @@ class Register extends React.Component {
   render () {
     return (
       <form>
-        <label htmlFor='name'>First name</label>
+        <label>First name</label>
         <br/>
         <input type='text' placeholder='First name' name='name'
           className='u-full-width'
@@ -47,29 +47,29 @@ class Register extends React.Component {
         />
         <br/>
         <br/>
-        <label htmlFor='surname'>Surname</label>
+        <label>Surname</label>
         <br/>
         <input type='text' placeholder='Last name' name='surname'
           className='u-full-width'
-          value={this.state.name}
+          value={this.state.surname}
           onChange={this.handleChange}
         />
         <br/>
         <br/>
-        <label htmlFor='hash'>Hash</label>
+        <label>Hash</label>
         <br/>
         <input type='password' placeholder='Password' name='password'
           className='u-full-width'
-          value={this.state.description}
+          value={this.state.hash}
           onChange={this.handleChange}
         />
         <br/>
         <br/>
-        <label htmlFor='role'>Role</label>
+        <label>Role</label>
         <br/>
         <select placeholder='Are you a student or a teacher?' name='role'
           className='u-full-width'
-          value={this.state.description}
+          value={this.state.role}
           onChange={this.handleChange}
         >
           <option value="student">Student</option>
@@ -77,12 +77,11 @@ class Register extends React.Component {
         </select>
         <br/>
         <br/>
-        {/* cohort will be a drop down box */}
-        <label htmlFor='cohort'>Cohort</label>
+        <label>Cohort</label>
         <br/>
         <input type='text' name='cohort' placeholder='Your cohort'
           className='u-full-width'
-          value={this.state.description}
+          value={this.state.cohort}
           onChange={this.handleChange}
         />
         <br/>
