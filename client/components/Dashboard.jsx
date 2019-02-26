@@ -1,119 +1,52 @@
-import React from 'react'
-import {connect} from 'react-redux'
-
-import {register, registerError} from '../actions/auth'
-
-class Register extends React.Component {
-    state = {
-      name: '',
-      surname: '',
-      hash: ''
-      // role: '',
-      // cohort: ''
+import React, { Component } from 'react'
+import ProgressModule from './ProgressModule'
+import DropdownModule from './DropdownModule'
+import Header from './Header'
+import ProgressBar from './ProgressBar'
+export default class Dashboard extends Component {
+  state = {
+    percentage1: 25,
+    percentage2: 36,
+    percentage3: 90,
+    percentage4: 10,
+    student: {
+      firstName: 'Chris',
+      lastName: 'Laupama',
+      cohort: 'Harakeke 2019'
     }
-
-  register = () => {
-    const {name, surname, hash} = this.state
-
-    if(!name) {
-      return this.props.dispatch(registerError('User must provide name'))
-    }
-    if(!surname) {
-      return this.props.dispatch(registerError('User must provide surname'))
-    }
-    if(!hash) {
-      return this.props.dispatch(registerError('User must provide hash'))
-    }
-
-    this.props.dispatch(register(name, surname, hash))
-
-    this.setState({
-      name: '',
-      surname: '',
-      hash: ''
-    })
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
-
-  render () {
-    console.log(this.state)
+  render() {
     return (
-      <form>
-        <label htmlFor='name'>First name</label>
+      <React.Fragment>
+        <Header student={this.state.student} />
+        <div className="progressBar">
+        <ProgressBar/></div>
         <br/>
-        <input 
-          type='text' 
-          placeholder='First name' 
-          name='name'
-          className='u-full-width'
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-        <br/>
-        <br/>
-        <label htmlFor='surname'>Surname</label>
-        <br/>
-        <input 
-          type='text' 
-          placeholder='Last name' 
-          name='surname'
-          className='u-full-width'
-          value={this.state.surname}
-          onChange={this.handleChange}
-        />
-        <br/>
-        <br/>
-        <label htmlFor='hash'>Hash</label>
-        <br/>
-        <input 
-          type='password' 
-          placeholder='Password' 
-          name='password'
-          className='u-full-width'
-          value={this.state.hash}
-          onChange={this.handleChange}
-        />
-        <br/>
-        <br/>
-        {/* <label htmlFor='role'>Role</label>
-        <br/>
-        <input type='text' placeholder='Are you a student or a teacher?' name='role'
-          className='u-full-width'
-          value={this.state.role}
-          onChange={this.handleChange}
-        />
-        <br/>
-        <br/>
-        {/* cohort will be a drop down box */}
-        {/* <label htmlFor='cohort'>Cohort</label>
-        <br/>
-        <input type='text' name='cohort' placeholder='Your cohort'
-          className='u-full-width'
-          value={this.state.cohor}
-          onChange={this.handleChange}
-        />  */}
-        <br/>
-        <button 
-          type='submit' 
-          className='button-primary' 
-          value='Add' 
-          onClick={this.register}
-          >
-        Register</button>
-      </form>
+
+        <div className="progress-module">
+          <div>
+            <ProgressModule percentage={this.state.percentage1} />
+            Tracked Item 1
+          </div>
+
+          <div>
+            <ProgressModule percentage={this.state.percentage2} />
+            Tracked Item 2
+          </div>
+
+          <div>
+            <ProgressModule percentage={this.state.percentage3} />
+            Tracked Item 3
+          </div>
+
+          <div>
+            <ProgressModule percentage={this.state.percentage4} />
+            Tracked Item 4
+          </div>
+        </div>
+        <DropdownModule />
+      </React.Fragment>
     )
   }
 }
-
-const mapStateToProps = ({auth}) => {
-  return {
-    auth
-  }
-}
-
-export default connect(mapStateToProps(Register))

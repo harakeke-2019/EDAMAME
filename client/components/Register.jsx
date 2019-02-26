@@ -104,11 +104,14 @@ export default connect(mapStateToProps)(Register)
 
         {/* <label htmlFor='role'>Role</label>
         <br/>
-        <input type='text' placeholder='Are you a student or a teacher?' name='role'
+        <select placeholder='Are you a student or a teacher?' name='role'
           className='u-full-width'
           value={this.state.role}
           onChange={this.handleChange}
-        />
+        >
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
         <br/>
         <br/>
         {/* cohort will be a drop down box */}
