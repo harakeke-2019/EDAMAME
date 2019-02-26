@@ -9,6 +9,7 @@ import { Paper,
   MenuItem,
   InputLabel } from '@material-ui/core'
 
+import {connect} from 'react-redux'
 import {register, registerError} from '../actions/auth'
 
 class Register extends React.Component {

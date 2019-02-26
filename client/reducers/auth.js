@@ -1,6 +1,5 @@
 import {getToken} from '../utils/tokens'
 
-
 const initialState = {
   error: null,
   loggedIn: !!getToken(),

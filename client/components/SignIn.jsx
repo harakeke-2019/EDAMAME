@@ -3,10 +3,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
 
 class SignIn extends React.Component() {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div>
