@@ -14,6 +14,11 @@ let store = createStore(reducers, compose(
 ))
 
 document.addEventListener('DOMContentLoaded', () => {
+  render()
+  store.subscribe(render)
+})
+
+function render () {
   ReactDOM.render(
     <Provider store={store}>
       <Router>
@@ -22,4 +27,4 @@ document.addEventListener('DOMContentLoaded', () => {
     </Provider>,
     document.getElementById('root')
   )
-})
+}
