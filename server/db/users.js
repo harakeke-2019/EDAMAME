@@ -44,18 +44,18 @@ function handleSignin (user, db = connection) {
 
 // function you use to assist with your current issue
 function getStudentAssessmentStatuses (id, db = connection) {
-  return db('student_assessments')
-    .join('exercises', 'student_assessments.assessment_id', 'exercises.assessment_id')
-    .join('statuses', 'student_assessments.status_id', 'statuses.id')
-    .join('assessments', 'student_assessments.assessment_id', 'assessments.id')
+  return db('students_assessments')
+    .join('exercises', 'students_assessments.assessment_id', 'exercises.assessment_id')
+    .join('statuses', 'students_assessments.status_id', 'statuses.id')
+    .join('assessments', 'students_assessments.assessment_id', 'assessments.id')
     .join('modules', 'assessments.module_id', 'modules.id')
-    .where('student_assessments.student_id', id)
+    .where('students_assessments.student_id', id)
     .select(
-      'student_assessments.evidence as evidence',
+      'students_assessments.evidence as evidence',
       'exercises.title as excersiseTitle',
       'statuses.name as status',
       'assessments.title as assessmentTitle',
-      'student_assessments.student_id as studentId',
+      'students_assessments.student_id as studentId',
       'modules.title as moduleTitle',
       'assessments.description as assessmentDescription'
     )
