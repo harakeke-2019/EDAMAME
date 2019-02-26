@@ -1,5 +1,9 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { signin } from '../actions/auth'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 class SignIn extends React.Component {
   constructor (props) {
@@ -14,15 +18,17 @@ class SignIn extends React.Component {
   }
 
   render () {
-    const { firstname, lastname, password } = this.state
+    if (this.props.auth.loggedIn) {
+      return <Redirect to='/' />
+    }
+
+    const { name, surname, password } = this.state
     return (
       <div className='signin'>
-        <form className='signinForm'>
-          <input id='username' name='firstname' placeholder='firstname' onChange={this.handleChange} value={name} />
-          <input id='username' name='lastname' placeholder='lastname' onChange={this.handleChange} value={surname} />
-          <input id='password' name='password' placeholder='password' onChange={this.handleChange} value={password} type='password'/>
-          <button name='signinBtn' id='signinBtn' onClick={this.handleSubmit}>Sign in</button>
-        </form>
+        <TextField id='firstname' name='name' placeholder='firstname' onChange={this.handleChange} value={name} />
+        <TextField id='lastname' name='surname' placeholder='lastname' onChange={this.handleChange} value={surname} />
+        <TextField id='password' name='password' placeholder='password' onChange={this.handleChange} value={password} type='password'/>
+        <Button name='signinBtn' id='signinBtn' onClick={this.handleSubmit}>Sign in</Button>
       </div>
     )
   }
@@ -35,11 +41,11 @@ class SignIn extends React.Component {
   }
 
   handleSubmit (e) {
-    const { username, password } = this.state
-    const goToEvents = () => this.props.history.push('/events')
-    this.props.signIn(username, password, goToEvents)
+    const user = this.state
+    this.props.dispatch(signin(user))
     e.preventDefault()
   }
 }
 
-export default SignIn
+const mapStateToProps = ({ auth }) => ({ auth })
+export default connect(mapStateToProps)(SignIn)
