@@ -10,7 +10,7 @@ export default function ProgressBar (props) {
   return (
     <React.Fragment>
       <h3>Cohort Progress</h3>
-      <Bar class='progressBar'>
+      <Bar className='progressBar'>
         <Bar striped variant="success" now={{percentage1}} key={1} />
         <Bar variant="warning" now={{percentage2}} key={2} />
         <Bar striped variant="danger" now={{percentage3}} key={3} />
