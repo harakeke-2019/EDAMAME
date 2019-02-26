@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ProgressModule from './ProgressModule'
-import DropdownModule from './dropdownModule/DropdownModule'
+import DropdownModule from './DropdownModule'
 
 export default class Dashboard extends Component {
 

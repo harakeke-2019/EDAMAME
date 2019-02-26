@@ -1,6 +1,4 @@
-// Aubrey Ngapeita David
 import React from 'react'
-import Modules from './Modules'
 // import {getModules} from '../../api'
 
 const DropdownModule = () => {
