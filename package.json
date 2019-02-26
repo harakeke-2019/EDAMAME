@@ -7,13 +7,14 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "webpack && node server",
-    "dev": "node server & webpack --watch",
-    "client": "webpack-dev-server --hot --inline",
-    "server": "node server",
-    "knex": "knex --knexfile ./server/db/knexfile.js",
-    "updateDb": "rm dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
-    "test": "jest --watchAll"
+    "start": "concurrently \"node server\" \"webpack --watch\"",
+    "dev": "concurrently 'yarn client' 'yarn server'",
+    "client": "webpack --watch",
+    "server": "nodemon server --ignore server/public",
+    "knex": "knex --knexfile ./knexfile.js",
+    "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
+    "test": "jest --watchAll --testPathIgnorePatterns tests/cypress",
+    "e2e": "nodemon server --ignore server/public & webpack --watch & cypress open"
   },
   "babel": {
     "presets": [
@@ -31,11 +32,25 @@
     ]
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "cheerio": "^1.0.0-rc.2",
+    "concurrently": "^4.1.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
     "knex": "^0.16.3",
+    "libsodium-wrappers": "^0.7.4",
     "path": "^0.12.7",
+    "react-redux": "^6.0.1",
+    "react-bootstrap": "^1.0.0-beta.5",
+    "react-circular-progressbar": "^1.0.0",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "sqlite3": "^4.0.6",
-    "superagent": "^4.1.0"
+    "superagent": "^4.1.0",
+    "supertest": "^3.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -44,14 +59,14 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "cypress": "^3.1.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "jest": "^24.1.0",
     "nodemon": "^1.18.10",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-cli": "^3.2.1"
   }
 }
