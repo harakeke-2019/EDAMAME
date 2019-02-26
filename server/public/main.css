@@ -1,18 +1,13 @@
-[data-state="tabbordion"] {
-    clip: rect(0 0 0 0);
-    height: 1px;
-    position: absolute;
-    position: fixed;
-    width: 1px;
-    z-index: -1;
-}
-
 /*
  * react-circular-progressbar styles
  *
  * All of the styles in this file are optional and configurable!
  */
 
+.progress-module {
+ display: flex;
+ flex: wrap;
+}
  .CircularProgressbar {
     /*
      * This fixes an issue where the CircularProgressbar svg has
@@ -20,7 +15,9 @@
      *
      * If you're not using "display: flex", you can remove this style.
      */
-    width: 100%;
+    display: flex;
+    width: 20%;
+    min-width: 130px;
   }
   
   .CircularProgressbar .CircularProgressbar-path {

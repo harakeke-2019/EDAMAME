@@ -12,15 +12,6 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/register', (req, res) => {
-  db.newUser(req.body)
-    .then(res.redirect('/'))
-    .catch(displayErr)
-  function displayErr (err) {
-    res.status(500).send(err.message)
-  }
-})
-
 router.get('/student/:id', (req, res) => {
   const id = req.params.id
   if (req.query.view === 'modules') {
